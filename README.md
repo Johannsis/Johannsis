@@ -9,7 +9,6 @@
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white)](mailto:johanneshoersch@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanneshoersch/)
 [![X](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white)](https://x.com/HoerschJoh4010)
-[![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
 [![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
 [![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/network/members)
@@ -17,6 +16,7 @@
 [![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/issues)
 [![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/graphs/contributors)
 [![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](https://github.com/Johannsis/Johannsis/blob/main/LICENSE)
+[![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
 [![Update README Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml)
 <a href="https://webpets-flame.vercel.app">
