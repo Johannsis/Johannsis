@@ -69,10 +69,10 @@
 ### GitHub Stats
 <div align="center">
   <a href="https://streak-stats.demolab.com">
-    <img align="left" height="170" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
+    <img align="left" height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
   </a>
   <a href="https://github-readme-stats.vercel.app">
-    <img align="right" height="170" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+    <img align="right" height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
   </a>
 <div/>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
