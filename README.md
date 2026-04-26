@@ -18,7 +18,7 @@
 [![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](https://github.com/Johannsis/Johannsis/blob/main/LICENSE)
 [![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
-[![Update README Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml)
+[![Update README with Github Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml)
 <a href="https://webpets-flame.vercel.app">
   <img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="900"/>
 <a/>

@@ -1,5 +1,5 @@
 {
-  "name": "Johannsis",
+  "name": "johannsis",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Johannsis/Johannsis.git"
@@ -19,6 +19,6 @@
     "readme.md",
     "github",
     "actions",
-    "dynamic",
-  ],
+    "dynamic"
+  ]
 }
