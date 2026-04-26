@@ -25,7 +25,7 @@
 
 ## 🔭 About me
 <a align="right" href="#">
-  <img align="right" src="./assets/johannes-ai-image-animated.svg" alt="Johannes Hoersch Image" width="286" height="400" />
+  <img align="right" src="./assets/programming.gif" alt="Johannes Hoersch Image" width="300" height="300" />
 <a/>
 <br/><br/><br/><br/>
 <ul align="left">
@@ -65,11 +65,11 @@
 ## 🌱 Stats
 ### GitHub Stats
 <div align="center">
-  <a href="https://streak-stats.demolab.com">
-    <img align="left" height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
-  </a>
   <a href="https://github-readme-stats.vercel.app">
-    <img align="right" height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+    <img align="left" height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+  </a>
+  <a href="https://streak-stats.demolab.com">
+    <img align="right" height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
   </a>
 <div/>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
