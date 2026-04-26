@@ -48,6 +48,10 @@
 ## Recent GitHub Activity
 
 <!--START_SECTION:activity-->
+1. 🚀 Published release [v1.0.3](https://github.com/Johannsis/portfolio/releases/tag/v1.0.3) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+2. 🚀 Published release [v1.0.2](https://github.com/Johannsis/portfolio/releases/tag/v1.0.2) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+3. 🚀 Published release [v1.0.1](https://github.com/Johannsis/portfolio/releases/tag/v1.0.1) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+4. 🚀 Published release [v1.0.0](https://github.com/Johannsis/portfolio/releases/tag/v1.0.0) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 <!--END_SECTION:activity-->
 <img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="900" height="50" />
 
