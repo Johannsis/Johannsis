@@ -15,7 +15,8 @@
 [![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/pulls)
 [![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/issues)
 [![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/graphs/contributors)
-[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](https://github.com/Johannsis/Johannsis/blob/main/LICENSE)
+[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis?style=flat
+)](https://github.com/Johannsis/Johannsis/blob/main/LICENSE)
 [![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
 [![Update README with Github Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml)
@@ -24,22 +25,19 @@
 <a/>
 
 ## 🔭 About me
-<a href="#">
+<a align="right" href="#">
   <img align="right" src="./assets/johannes-ai-image-animated.svg" alt="Johannes Hoersch Image" width="286" height="400" />
 <a/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-  
-- 👨🏽‍💻 I'm a software engineer specializing in front-end development
-
-- 📊 I’m a fan of minimal and fast code
-
-- 📈 I value low-cost, functional, clean and reliable software that improves DX and UX
-
-- 📖 Studying software architecture
+<br/><br/><br/><br/>
+<ul align="left">
+  <li>👨🏽‍💻 I'm a software engineer specializing in front-end development</li>
+  <br/>
+  <li>📊 I’m a fan of minimal and fast code</li>
+  <br/>
+  <li>📈 I value low-cost, functional, clean and reliable software that improves DX and UX</li>
+  <br/>
+  <li>📖 Studying software architecture</li>
+</ul> 
 <a href="https://webpets-flame.vercel.app">
   <img src="https://webpets-flame.vercel.app/generated/mod/purple_walk_fast_8fps.gif" alt="Mod Fast Walk" width="900" height="50" />
 <a/>
