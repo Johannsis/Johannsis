@@ -103,8 +103,8 @@
 <a/>
   
 <hr>
-<h3 align="left">✨ Random Dev Quote::</h3>
-<p align="center">
+<h3>✨ Random Dev Quote::</h3>
+<p>
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Dev Quote" />
 </p>
 <hr>
