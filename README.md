@@ -76,7 +76,7 @@
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <div align="center">
   <a href="https://github-readme-stats.vercel.app">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's Top Languages" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
   </a>
 </div>
 <br/>
