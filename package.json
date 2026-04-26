@@ -21,7 +21,8 @@
 		"url": "git+https://github.com/Johannsis/Johannsis.git"
 	},
 	"scripts": {
-		"lint": "biome lint --fix",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint --write .",
 		"format": "biome format . --write",
 		"release": "semantic-release"
 	},

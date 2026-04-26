@@ -15,7 +15,8 @@
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "tab"
+    "indentStyle": "tab",
+    "indentWidth": 2
   },
   "javascript": {
     "formatter": {
