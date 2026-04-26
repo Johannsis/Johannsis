@@ -27,7 +27,7 @@
 
 ## 🔭 About me
 <a align="right" href="#">
-  <img align="right" src="./assets/programming.gif" alt="Johannes Hoersch Image" width="300" height="300" />
+  <img align="right" src="./assets/programming.avif" alt="Johannes Programming Image" width="300" height="300" />
 <a/>
 <br/>
 <ul align="left">
