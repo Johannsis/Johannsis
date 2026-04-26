@@ -6,9 +6,9 @@
 [![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
 [![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](https://github.com/Johannsis?tab=followers)
 
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white)](mailto:johanneshoersch@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanneshoersch/)
-[![X](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white)](https://x.com/HoerschJoh4010)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white&style=flat-square)](mailto:johanneshoersch@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/johanneshoersch/)
+[![X](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white&style=flat-square&labelColor=3c3c3c&color=3c3c3c)](https://x.com/HoerschJoh4010)
 
 [![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
 [![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/network/members)
@@ -27,11 +27,12 @@
 <a href="#">
   <img align="right" src="./johannes-ai-image-animated.svg" alt="Johannes Hoersch Image" width="286" height="400" />
 <a/>
-<br/><br/>
 <br/>
 <br/>
 <br/>
-
+<br/>
+<br/>
+  
 - 👨🏽‍💻 I'm a software engineer specializing in front-end development
 
 - 📊 I’m a fan of minimal and fast code
@@ -83,7 +84,7 @@
 <br/>
 <div align="center">
   <a align="right" href="https://github-profile-summary-cards.vercel.app">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=github_dark" alt="Johannsis's Top Languages" />
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
   </a>
 <div/>
 <a href="https://webpets-flame.vercel.app">
