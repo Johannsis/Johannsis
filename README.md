@@ -15,6 +15,7 @@
 [![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/pulls)
 [![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/issues)
 [![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/graphs/contributors)
+[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](https://github.com/Johannsis/Johannsis/blob/main/LICENSE)
 [![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
 [![Update README with Github Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml)
