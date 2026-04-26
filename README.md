@@ -25,7 +25,7 @@
 
 ## 🔭 About me
 <a href="#">
-  <img align="right" src="./johannes-ai-image-animated.svg" alt="Johannes Hoersch Image" width="286" height="400" />
+  <img align="right" src="./assets/johannes-ai-image-animated.svg" alt="Johannes Hoersch Image" width="286" height="400" />
 <a/>
 <br/>
 <br/>
