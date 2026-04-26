@@ -1,19 +1,43 @@
-[![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)](https://github.com/Johannsis)
-<img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="900" height="50"/>
+[![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)](https://readme-typing-svg.herokuapp.com)
+<a href="https://webpets-flame.vercel.app">
+  <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="900" height="50"/>
+<a/>
 
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white)](mailto:johanneshoersch@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanneshoersch/)
 [![X](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white)](https://x.com/HoerschJoh4010)
-[![Profile views](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](https://github.com/Johannsis)
-[![GitHub followers](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](https://github.com/Johannsis)
-[![Repo stars](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis)
-<img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="900"/>
+[![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
+
+[![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
+[![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](#)
+[![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](#)
+[![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](#)
+[![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](#)
+[![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](#)
+[![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](#)
+[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](#)
+[![Update Github Activity Actions Status](https://github.com/Johannsis/Johannsis/workflows/update-readme-activity/badge.svg)](https://github.com/Johannsis/Johannsis/actions)
+<a href="https://webpets-flame.vercel.app">
+  <img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="900"/>
+<a/>
 
 ## 🔭 About me
+<a href="#">
+  <img align="right" src="./johannes-ai-image-animated.svg" alt="Johannes Hoersch Image" width="286" height="400" />
+<a/>
+<br/><br/>
+<br/>
+<br/>
+<br/>
+
 - 👨🏽‍💻 I'm a software engineer specializing in front-end development
+
 - 📊 I’m a fan of minimal and fast code
+
 - 📈 I value low-cost, functional, clean and reliable software that improves DX and UX
-<img src="https://webpets-flame.vercel.app/generated/mod/purple_walk_fast_8fps.gif" alt="Mod Fast Walk" width="900" height="50" />
+<a href="https://webpets-flame.vercel.app">
+  <img src="https://webpets-flame.vercel.app/generated/mod/purple_walk_fast_8fps.gif" alt="Mod Fast Walk" width="900" height="50" />
+<a/>
 
 ## 🖥️ Tech Stack
 | **Type** | **Tools** |
@@ -32,18 +56,35 @@
 | **Cloud** | [![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/) [![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?logo=Cloudflare&logoColor=white)](https://www.cloudflare.com/) |
 | **Platforms** | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/) [![Temenos Transact](https://img.shields.io/badge/Temenos_Transact_(T24)-%23007ACC)](https://www.temenos.com/resource/temenos-transact-brochure/) [![Jira](https://img.shields.io/badge/Jira-%230A0FFF.svg?logo=jira&logoColor=white)](https://www.atlassian.com/software/jira) |
 | **IDEs** | [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/) [![Zed](https://img.shields.io/badge/Zed-084CCF.svg?logo=zedindustries&logoColor=white)](https://zed.dev/) [![Xcode](https://img.shields.io/badge/Xcode-007ACC?logo=Xcode&logoColor=white)](https://developer.apple.com/xcode/) [![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?logo=android-studio&logoColor=white)](https://developer.android.com/studio) |
-<img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="900" height="50" />
+<a href="https://webpets-flame.vercel.app">
+  <img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="900" height="50" />
+<a/>
 
 ## 🌱 Stats
 ### GitHub Stats
-![Johannsis's GitHub stats](https://github-readme-stats.vercel.app/api?username=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=vue-dark)
-
-![Johannsis's Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&hide=TeX&layout=compact&show_icons=true&count_private=true&include_all_commits=true&&theme=vue-dark)
-
-![GitHub Streak](https://streak-stats.demolab.com?user=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=vue-dark)
-
-![Summary](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=github_dark)
-<img src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="900" height="50" />
+<div align="center">
+  <a href="https://streak-stats.demolab.com">
+    <img align="left" height="170" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
+  </a>
+  <a href="https://github-readme-stats.vercel.app">
+    <img align="right" height="170" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+  </a>
+<div/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div align="center">
+  <a href="https://github-readme-stats.vercel.app">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's Top Languages" />
+  </a>
+</div>
+<br/>
+<div align="center">
+  <a align="right" href="https://github-profile-summary-cards.vercel.app">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=github_dark" alt="Johannsis's Top Languages" />
+  </a>
+<div/>
+<a href="https://webpets-flame.vercel.app">
+  <img src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="900" height="50" />
+<a/>
 
 ## Recent GitHub Activity
 
@@ -53,12 +94,16 @@
 3. 🚀 Published release [v1.0.1](https://github.com/Johannsis/portfolio/releases/tag/v1.0.1) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 4. 🚀 Published release [v1.0.0](https://github.com/Johannsis/portfolio/releases/tag/v1.0.0) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 <!--END_SECTION:activity-->
-<img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="900" height="50" />
-
+<a href="https://webpets-flame.vercel.app">
+  <img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="900" height="50" />
+<a/>
+  
 <hr>
 <h3 align="left">✨ Random Dev Quote::</h3>
 <p align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Dev Quote" />
 </p>
 <hr>
-<img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="900" height="50" />
+<a href="https://webpets-flame.vercel.app">
+  <img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="900" height="50" />
+</a>
