@@ -29,11 +29,11 @@
 <a/>
 <br/><br/><br/><br/>
 <ul align="left">
-  <li>👨🏽‍💻 I'm a software engineer specializing in front-end development</li>
+  <li>👨🏽‍💻 I'm a software engineer specialized in front-end development</li>
   <br/>
   <li>📊 I’m a fan of minimal and fast code</li>
   <br/>
-  <li>📈 I value low-cost, functional, clean and reliable software that improves DX and UX</li>
+  <li>📈 I value low-cost, functional, clean and reliable software that improves developer and user experience</li>
   <br/>
   <li>📖 Studying software architecture</li>
 </ul> 
