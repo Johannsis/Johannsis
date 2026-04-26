@@ -3,20 +3,22 @@
   <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="900" height="50"/>
 <a/>
 
+[![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
+[![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](https://github.com/Johannsis?tab=followers)
+
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white)](mailto:johanneshoersch@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanneshoersch/)
 [![X](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white)](https://x.com/HoerschJoh4010)
 [![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
-[![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
-[![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](#)
-[![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](#)
-[![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](#)
-[![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](#)
-[![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](#)
-[![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](#)
-[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](#)
-[![Update Github Activity Actions Status](https://github.com/Johannsis/Johannsis/workflows/update-readme-activity/badge.svg)](https://github.com/Johannsis/Johannsis/actions)
+[![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
+[![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/network/members)
+[![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/pulls)
+[![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/issues)
+[![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/graphs/contributors)
+[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/main/LICENSE)
+
+[![Update README Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml)
 <a href="https://webpets-flame.vercel.app">
   <img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="900"/>
 <a/>
@@ -35,6 +37,8 @@
 - 📊 I’m a fan of minimal and fast code
 
 - 📈 I value low-cost, functional, clean and reliable software that improves DX and UX
+
+- 📖 Studying software architecture
 <a href="https://webpets-flame.vercel.app">
   <img src="https://webpets-flame.vercel.app/generated/mod/purple_walk_fast_8fps.gif" alt="Mod Fast Walk" width="900" height="50" />
 <a/>
