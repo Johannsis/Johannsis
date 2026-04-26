@@ -1,0 +1,24 @@
+{
+  "name": "Johannsis",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johannsis/Johannsis.git"
+  },
+  "version": "1.0.0",
+  "private": false,
+  "homepage": "https://github.com/Johannsis/Johannsis#readme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Johannsis/Johannsis/issues"
+  },
+  "author": "Johannes Hoersch <johanneshoersch@gmail.com>",
+  "description": "A dynamic README.md for the GitHub Profile, using Actions.",
+  "keywords": [
+    "github",
+    "profile",
+    "readme.md",
+    "github",
+    "actions",
+    "dynamic",
+  ],
+}
