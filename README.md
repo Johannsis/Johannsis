@@ -27,7 +27,7 @@
 <a align="right" href="#">
   <img align="right" src="./assets/programming.gif" alt="Johannes Hoersch Image" width="300" height="300" />
 <a/>
-<br/><br/><br/><br/>
+<br/>
 <ul align="left">
   <li>👨🏽‍💻 I'm a software engineer specializing in front-end development</li>
   <br/>
