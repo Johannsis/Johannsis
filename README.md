@@ -37,8 +37,11 @@
 ## 🌱 Stats
 ### GitHub Stats
 ![Johannsis's GitHub stats](https://github-readme-stats.vercel.app/api?username=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=vue-dark)
+
 ![GitHub Streak](https://streak-stats.demolab.com?user=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=vue-dark)
+
 ![Johannsis's Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&hide=TeX&layout=compact&show_icons=true&count_private=true&include_all_commits=true&&theme=vue-dark)
+
 ![Summary](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&count_private=true&show_icons=true&include_all_commits=true&theme=github_dark)
 <img src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="900" height="50" />
 
