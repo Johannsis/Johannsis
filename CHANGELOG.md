@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Johannsis/Johannsis/compare/v1.2.0...v1.3.0) (2026-04-26)
+
+
+### Features
+
+* Add Prettier and switch indentation to spaces ([05160b4](https://github.com/Johannsis/Johannsis/commit/05160b4772373d8de54134ecf2dbea7b9394e451))
+
 # [1.2.0](https://github.com/Johannsis/Johannsis/compare/v1.1.0...v1.2.0) (2026-04-26)
 
 
