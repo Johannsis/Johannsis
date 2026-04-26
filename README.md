@@ -12,11 +12,11 @@
 [![Johannsis's Website](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
 [![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
-[![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/network/members)
-[![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/pulls)
-[![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/issues)
-[![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/graphs/contributors)
-[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/main/LICENSE)
+[![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/network/members)
+[![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/pulls)
+[![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/issues)
+[![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/graphs/contributors)
+[![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis)](https://github.com/Johannsis/Johannsis/blob/main/LICENSE)
 
 [![Update README Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-activity.yml)
 <a href="https://webpets-flame.vercel.app">
