@@ -1,9 +1,10 @@
-<div align="center">
+<a href="#" align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!" alt="Johannsis's Typing SVG" />
-</div>
+</a>
 
-<img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="100%" height="50" />
-
+<a align="center">
+  <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="100%" height="50" />
+</a>
 <div align="center">
 
 [![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
@@ -30,12 +31,16 @@
 
 </div>
 
-<img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="100%" height="50" />
+<a href="#" align="center">
+  <img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="100%" height="50" />
+</a>
 
 ## 🔎 About me
 
 <div align="center">
-  <img src="https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain" alt="Johannsis's About Me Information" />
+  <a href="#">
+    <img src="https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain" alt="Johannsis's About Me Information" />
+  </a>
 </div>
 
 <img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="100%" height="50" />
@@ -54,7 +59,7 @@
     </tr>
   </thead>
   <tbody>
-  
+
 <tr><td><strong>Languages</strong></td><td>
 
 [![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
