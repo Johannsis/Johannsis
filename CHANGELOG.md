@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/Johannsis/Johannsis/compare/v1.5.4...v1.5.5) (2026-04-27)
+
+
+### Bug Fixes
+
+* Wrap README images and badges in anchor links ([d9716c4](https://github.com/Johannsis/Johannsis/commit/d9716c48454f85be7b11dec92ae90dd6adac5ae0))
+
 ## [1.5.4](https://github.com/Johannsis/Johannsis/compare/v1.5.3...v1.5.4) (2026-04-27)
 
 
