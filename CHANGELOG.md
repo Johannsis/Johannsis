@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/Johannsis/Johannsis/compare/v1.5.1...v1.5.2) (2026-04-27)
+
+
+### Bug Fixes
+
+* Convert tech stack badges to HTML table ([9204bd2](https://github.com/Johannsis/Johannsis/commit/9204bd2df9c5efa99668e22185a02651c0ed92ad))
+
 ## [1.5.1](https://github.com/Johannsis/Johannsis/compare/v1.5.0...v1.5.1) (2026-04-27)
 
 
