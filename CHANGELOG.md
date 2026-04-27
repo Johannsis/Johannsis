@@ -1,3 +1,10 @@
+## [1.5.11](https://github.com/Johannsis/Johannsis/compare/v1.5.10...v1.5.11) (2026-04-27)
+
+
+### Bug Fixes
+
+* update README build workflow ([6ee9dce](https://github.com/Johannsis/Johannsis/commit/6ee9dcea91d691a313a79975ad8bd0a9b23131f0))
+
 ## [1.5.10](https://github.com/Johannsis/Johannsis/compare/v1.5.9...v1.5.10) (2026-04-27)
 
 
