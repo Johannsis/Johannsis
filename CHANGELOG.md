@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/Johannsis/Johannsis/compare/v1.5.2...v1.5.3) (2026-04-27)
+
+
+### Bug Fixes
+
+* Refactor README badges layout and tweak summaries ([f2d6646](https://github.com/Johannsis/Johannsis/commit/f2d664608cd889bbf2d3131278329ed43ecec452))
+
 ## [1.5.2](https://github.com/Johannsis/Johannsis/compare/v1.5.1...v1.5.2) (2026-04-27)
 
 
