@@ -10,11 +10,11 @@ function getRequiredEnvVar(name: string): string {
   return value;
 }
 
-const GH_TOKEN = getRequiredEnvVar("GH_TOKEN");
+const GITHUB_TOKEN = getRequiredEnvVar("GITHUB_TOKEN");
 const USER_NAME = getRequiredEnvVar("USER_NAME");
 
 const HEADERS = {
-  authorization: `token ${GH_TOKEN}`,
+  authorization: `token ${GITHUB_TOKEN}`,
   "content-type": "application/json",
 };
 
@@ -53,11 +53,7 @@ function dailyReadme(birthday: Date): string {
 
   if (days < 0) {
     months -= 1;
-    const previousMonth = new Date(
-      today.getFullYear(),
-      today.getMonth(),
-      0,
-    ).getDate();
+    const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
     days += previousMonth;
   }
 
@@ -109,10 +105,7 @@ function queryCount(functId: QueryCountKey): void {
   QUERY_COUNT[functId] += 1;
 }
 
-async function _graphCommits(
-  startDate: string,
-  endDate: string,
-): Promise<number> {
+async function _graphCommits(startDate: string, endDate: string): Promise<number> {
   queryCount("graph_commits");
   const query = `
     query($start_date: DateTime!, $end_date: DateTime!, $login: String!) {
@@ -140,10 +133,7 @@ async function _graphCommits(
     };
   }>("graphCommits", query, variables);
 
-  return Number(
-    data.data.user.contributionsCollection.contributionCalendar
-      .totalContributions,
-  );
+  return Number(data.data.user.contributionsCollection.contributionCalendar.totalContributions);
 }
 
 type RepoEdge = {
@@ -465,9 +455,7 @@ async function cacheBuilder(
     data = [];
     if (commentSize > 0) {
       for (let index = 0; index < commentSize; index += 1) {
-        data.push(
-          "This line is a comment block. Write whatever you want here.",
-        );
+        data.push("This line is a comment block. Write whatever you want here.");
       }
     }
     await writeLines(fileName, data);
@@ -506,8 +494,7 @@ async function cacheBuilder(
         body,
         cacheComment,
       );
-      body[index] =
-        `${repoHash} ${totalCount} ${myCommits} ${additions} ${deletions}`;
+      body[index] = `${repoHash} ${totalCount} ${myCommits} ${additions} ${deletions}`;
     }
   }
 
@@ -524,11 +511,7 @@ async function cacheBuilder(
   return [locAdd, locDel, locAdd - locDel, cached];
 }
 
-async function flushCache(
-  edges: RepoEdge[],
-  fileName: string,
-  commentSize: number,
-): Promise<void> {
+async function flushCache(edges: RepoEdge[], fileName: string, commentSize: number): Promise<void> {
   let data: string[] = [];
 
   if (commentSize > 0) {
@@ -567,19 +550,10 @@ async function addArchive(): Promise<[number, number, number, number, number]> {
   const lastToken = oldData[oldData.length - 1]?.trim().split(/\s+/)[4] ?? "0";
   addedCommits += Number.parseInt(lastToken.slice(0, -1), 10);
 
-  return [
-    addedLoc,
-    deletedLoc,
-    addedLoc - deletedLoc,
-    addedCommits,
-    contributedRepos,
-  ];
+  return [addedLoc, deletedLoc, addedLoc - deletedLoc, addedCommits, contributedRepos];
 }
 
-async function forceCloseFile(
-  data: string[],
-  cacheComment: string[],
-): Promise<void> {
+async function forceCloseFile(data: string[], cacheComment: string[]): Promise<void> {
   const fileName = `cache/${sha256(USER_NAME)}.txt`;
   await writeLines(fileName, [...cacheComment, ...data]);
   console.log(
@@ -601,11 +575,7 @@ function escapeRegExp(input: string): string {
   return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function findAndReplace(
-  svg: string,
-  elementId: string,
-  newText: string,
-): string {
+function findAndReplace(svg: string, elementId: string, newText: string): string {
   const pattern = new RegExp(
     `(<[^>]*\\bid=["']${escapeRegExp(elementId)}["'][^>]*>)([\\s\\S]*?)(</[^>]+>)`,
   );
@@ -623,9 +593,7 @@ function justifyFormat(
   length = 0,
 ): string {
   const normalizedText =
-    typeof newText === "number"
-      ? newText.toLocaleString("en-US")
-      : String(newText);
+    typeof newText === "number" ? newText.toLocaleString("en-US") : String(newText);
   let result = findAndReplace(svg, elementId, normalizedText);
 
   const justLen = Math.max(0, length - normalizedText.length);
@@ -764,10 +732,7 @@ async function main(): Promise<void> {
   OWNER_ID = userData[0];
   formatter("account data", userTime);
 
-  const [ageData, ageTime] = await perfCounter(
-    dailyReadme,
-    new Date(2002, 6, 5),
-  );
+  const [ageData, ageTime] = await perfCounter(dailyReadme, new Date(2002, 6, 5));
   formatter("age calculation", ageTime);
 
   const [locResult, locTime] = await perfCounter(
@@ -780,12 +745,8 @@ async function main(): Promise<void> {
   let [locAdd, locDel, locTotal] = locResult;
 
   let [commitData, commitTime] = await perfCounter(commitCounter, 7);
-  const [starData, starTime] = await perfCounter(graphReposStars, "stars", [
-    "OWNER",
-  ]);
-  const [repoData, repoTime] = await perfCounter(graphReposStars, "repos", [
-    "OWNER",
-  ]);
+  const [starData, starTime] = await perfCounter(graphReposStars, "stars", ["OWNER"]);
+  const [repoData, repoTime] = await perfCounter(graphReposStars, "repos", ["OWNER"]);
   let [contribData, contribTime] = await perfCounter(graphReposStars, "repos", [
     "OWNER",
     "COLLABORATOR",
@@ -833,15 +794,7 @@ async function main(): Promise<void> {
   console.log(
     "\u001b[F\u001b[F\u001b[F\u001b[F\u001b[F\u001b[F\u001b[F\u001b[F",
     "Total function time:".padEnd(21, " "),
-    (
-      userTime +
-      ageTime +
-      locTime +
-      commitTime +
-      starTime +
-      repoTime +
-      contribTime
-    )
+    (userTime + ageTime + locTime + commitTime + starTime + repoTime + contribTime)
       .toFixed(4)
       .padStart(11, " "),
     " s \u001b[E\u001b[E\u001b[E\u001b[E\u001b[E\u001b[E\u001b[E\u001b[E",
@@ -850,15 +803,10 @@ async function main(): Promise<void> {
 
   console.log(
     "Total GitHub GraphQL API calls:",
-    String(
-      Object.values(QUERY_COUNT).reduce((sum, value) => sum + value, 0),
-    ).padStart(3, " "),
+    String(Object.values(QUERY_COUNT).reduce((sum, value) => sum + value, 0)).padStart(3, " "),
   );
   for (const [functName, count] of Object.entries(QUERY_COUNT)) {
-    console.log(
-      `   ${functName}:`.padEnd(28, " "),
-      String(count).padStart(6, " "),
-    );
+    console.log(`   ${functName}:`.padEnd(28, " "), String(count).padStart(6, " "));
   }
 }
 
