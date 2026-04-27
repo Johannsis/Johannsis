@@ -3,9 +3,6 @@ name: Generate Snake Animation with Contributions Graph
 on:
   schedule:
     - cron: "0 9 * * *"
-  push:
-    branches:
-    - main
   workflow_dispatch:
 
 jobs:
