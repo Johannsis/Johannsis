@@ -19,6 +19,13 @@
 
 * Normalize JSON formatting in config files ([0c13727](https://github.com/Johannsis/Johannsis/commit/0c13727f56d95cc9972d179b517aca0a3d2a796e))
 
+## [1.5.7](https://github.com/Johannsis/Johannsis/compare/v1.5.6...v1.5.7) (2026-04-27)
+
+
+### Bug Fixes
+
+* Normalize JSON formatting in config files ([0c13727](https://github.com/Johannsis/Johannsis/commit/0c13727f56d95cc9972d179b517aca0a3d2a796e))
+
 ## [1.5.6](https://github.com/Johannsis/Johannsis/compare/v1.5.5...v1.5.6) (2026-04-27)
 
 
