@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/Johannsis/Johannsis/compare/v1.5.0...v1.5.1) (2026-04-27)
+
+
+### Bug Fixes
+
+* Update README layout and stats sections ([72963ed](https://github.com/Johannsis/Johannsis/commit/72963edf4f61f33a9d0046535dedbc34c26e6a1d))
+
 # [1.5.0](https://github.com/Johannsis/Johannsis/compare/v1.4.0...v1.5.0) (2026-04-27)
 
 
