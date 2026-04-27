@@ -4,7 +4,7 @@
 
 </div>
 
-<a href="#">
+<a href="#" style="cursor:default;pointer-events:none;">
   <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Duck Walk" width="100%" height="50" />
 </a>
 
@@ -197,13 +197,23 @@
 
 <!--START_SECTION:activity-->
 
-1. 🚀 Published release [v1.6.0](https://github.com/Johannsis/Johannsis/releases/tag/v1.6.0) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-2. 🚀 Published release [v1.5.14](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.14) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-3. 🚀 Published release [v1.5.13](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.13) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-4. 🚀 Published release [v1.5.12](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.12) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-5. 🚀 Published release [v1.5.11](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.11) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-   [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+1. 🚀 Published release
+   [v1.6.0](https://github.com/Johannsis/Johannsis/releases/tag/v1.6.0) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+2. 🚀 Published release
+   [v1.5.14](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.14) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 3. 🚀 Published release
+   [v1.5.13](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.13) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+4. 🚀 Published release
+   [v1.5.12](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.12) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+5. 🚀 Published release
+   [v1.5.11](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.11) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+   [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+6. 🚀 Published release
    [v1.0.1](https://github.com/Johannsis/portfolio/releases/tag/v1.0.1) in
    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 
