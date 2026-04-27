@@ -4,7 +4,7 @@
 
 </div>
 
-<a href="#" style="cursor:default;pointer-events:none;">
+<a href="#">
   <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Duck Walk" width="100%" height="50" />
 </a>
 
