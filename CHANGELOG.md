@@ -1,3 +1,11 @@
+## [1.5.7](https://github.com/Johannsis/Johannsis/compare/v1.5.6...v1.5.7) (2026-04-27)
+
+
+### Bug Fixes
+
+* Add today scripts and README build workflow ([d9164f3](https://github.com/Johannsis/Johannsis/commit/d9164f3feb01d96213dc09467c6dd9fc4e110e93))
+* Format today.ts and update changelog ([1927512](https://github.com/Johannsis/Johannsis/commit/19275127401926f725d96e094f531bd696ed7fbb))
+
 ## [1.5.6](https://github.com/Johannsis/Johannsis/compare/v1.5.5...v1.5.6) (2026-04-27)
 
 
