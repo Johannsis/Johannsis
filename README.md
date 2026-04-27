@@ -1,18 +1,18 @@
 <div align="center">
 
-[![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)]()
+[![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)](#)
 
 </div>
 
-<a href="#no-link">
+<a href="#">
   <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Duck Walk" width="100%" height="50" />
 </a>
 
 <div align="center">
 
-![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)
+[![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
 [![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](https://github.com/Johannsis?tab=followers)
-![GitHub User's Stars Badge](https://img.shields.io/github/stars/Johannsis?label=user+stars&style=flat&logo=github)
+[![GitHub User's Stars Badge](https://img.shields.io/github/stars/Johannsis?label=user+stars&style=flat&logo=github)](#)
 
 [![Johannsis's Gmail Link Icon](https://skillicons.dev/icons?i=gmail)](mailto:johanneshoersch@gmail.com)
 [![Johannsis's LinkedIn Link Icon](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/johanneshoersch/)
@@ -34,7 +34,7 @@
 
 </div>
 
-<a>
+<a href="#">
   <img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="100%" height="50" />
 </a>
 
@@ -46,7 +46,9 @@
   </a>
 </div>
 
-<img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="100%" height="50" />
+<a href="#">
+  <img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="100%" height="50" />
+</a>
 
 ## 🖥️ Tech Stack
 
@@ -150,28 +152,44 @@
   </tbody>
 </table>
 
-<img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="100%" height="50" />
+<a href="#">
+  <img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="100%" height="50" />
+</a>
 
 ## 🙋🏽‍♂️ Contributions
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg" alt="Johannsis's Snake Contributions Graph Animation" />
+  <a href="#">
+    <img src="https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg" alt="Johannsis's Snake Contributions Graph Animation" />
+  </a>
 </div>
 
-<img src="https://webpets-flame.vercel.app/generated/horse/warrior_run_8fps.gif" alt="Horse Run" width="100%" height="50" />
+<a href="#">
+  <img src="https://webpets-flame.vercel.app/generated/horse/warrior_run_8fps.gif" alt="Horse Run" width="100%" height="50" />
+</a>
 
 ## 🌱 GitHub Statistics and Activity
 
 <details>
   <summary>Click to expand the stats</summary>
   <br />
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
-  <img height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
-  <img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
+  <a href="#">
+    <img height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+  </a>
+  <a href="#">
+    <img height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
+  </a>
+  <a href="#">
+    <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
+  </a>
+  <a href="#">
+    <img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
+  </a>
 </details>
 
-<img  src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="100%" height="50" />
+<a href="#">
+  <img  src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="100%" height="50" />
+</a>
 
 <details>
   <summary>Click to expand the activity</summary>
@@ -196,12 +214,18 @@
 
 </details>
 
-<img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="100%" height="50" />
+<a href="#">
+  <img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="100%" height="50" />
+</a>
 
 ## ✨ Random Dev Quote
 
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=dark" alt="Random Developer Quote" />
+  <a href="#">
+    <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=dark" alt="Random Developer Quote" />
+  </a>
 </div>
 
-<img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="100%" height="50" />
+<a href="#">
+  <img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="100%" height="50" />
+</a>
