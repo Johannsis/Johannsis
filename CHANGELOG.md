@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Johannsis/Johannsis/compare/v1.6.4...v1.7.0) (2026-04-27)
+
+
+### Features
+
+* Add SPECIAL_THANKS.md for external services ([6d76c09](https://github.com/Johannsis/Johannsis/commit/6d76c099e1fa0b35eecf304ad491008fbb7375f4))
+
 ## [1.6.4](https://github.com/Johannsis/Johannsis/compare/v1.6.3...v1.6.4) (2026-04-27)
 
 
