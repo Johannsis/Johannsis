@@ -8,7 +8,7 @@
 
 version: 2
 updates:
-  # Enable version updates for npm
+  # Enable version updates for bun
   - package-ecosystem: "bun"
     # Look for `package.json` and `lock` files in the `root` directory
     directory: "/"
@@ -16,7 +16,7 @@ updates:
     schedule:
       interval: "weekly"   
     commit-message:
-      # Prefix all commit messages with "bun: "
+      # Prefix all commit messages with "chore: "
       prefix: "chore"
     groups:
       all-dependencies:
@@ -30,6 +30,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      # Prefix all commit messages with "chore: "
+      prefix: "chore"
     groups:
       all-dependencies:
         patterns:
