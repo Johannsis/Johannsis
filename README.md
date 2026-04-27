@@ -5,12 +5,13 @@
 
 [![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
 [![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](https://github.com/Johannsis?tab=followers)
+[![GitHub User's Stars Badge](https://img.shields.io/github/stars/Johannsis?label=user+stars&style=flat&logo=github)](#)
 
 [![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white&style=flat-square)](mailto:johanneshoersch@gmail.com)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/johanneshoersch/)
 [![X Badge](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white&style=flat-square&labelColor=3c3c3c&color=3c3c3c)](https://x.com/HoerschJoh4010)
 
-[![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
+[![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?label=repo+stars&style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
 [![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/network/members)
 [![GitHub Release Badge](https://img.shields.io/github/v/release/Johannsis/Johannsis)](https://github.com/Johannsis/Johannsis/releases)
 [![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/pulls)
@@ -21,28 +22,17 @@
 
 [![Update README with Github Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml)
 [![Release to changelog and tags Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/automatic-release.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/automatic-release.yml)
+[![Generate Snake Animation with Contributions Graph](https://github.com/Johannsis/Johannsis/actions/workflows/snake-grid-contributions-generator.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/snake-grid-contributions-generator.yml)
 [![Dependabot Updates Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/dependabot/dependabot-updates)
 <a href="https://webpets-flame.vercel.app">
 <img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="900"/>
 <a/>
 
-## 🔭 About me
+## 🔎 About me
 
-<a align="right" href="#">
-  <img align="right" src="./assets/programming.avif" alt="Johannes Programming Image" width="300" height="300" />
-<a/>
-<br/>
-<ul align="left">
-  <li>👨🏽‍💻 I'm a software engineer specialized in front-end development</li>
-  <br/>
-  <li>📊 I’m a fan of minimal and fast code</li>
-  <br/>
-  <li>📈 I value low-cost, functional, clean and reliable software that improves developer and user experience</li>
-  <br/>
-  <li>📖 Studying software architecture</li>
-</ul> 
+[![Johannsis's About Me Information](https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain)](https://coolreadme.xyz/)
 <a href="https://webpets-flame.vercel.app">
-  <img src="https://webpets-flame.vercel.app/generated/mod/purple_walk_fast_8fps.gif" alt="Mod Fast Walk" width="900" height="50" />
+<img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="900"/>
 <a/>
 
 ## 🖥️ Tech Stack
@@ -66,6 +56,13 @@
 
 <a href="https://webpets-flame.vercel.app">
   <img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="900" height="50" />
+<a/>
+
+## 🙋🏽‍♂️ Contributions
+
+[![Johannsis's Snake Contributions Graph Animation](https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg)](https://github.com/Platane/Platane)
+<a href="https://webpets-flame.vercel.app">
+<img src="https://webpets-flame.vercel.app/generated/horse/warrior_run_8fps.gif" alt="Horse Run" width="900"/>
 <a/>
 
 ## 🌱 Stats
