@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/Johannsis/Johannsis/compare/v1.5.3...v1.5.4) (2026-04-27)
+
+
+### Bug Fixes
+
+* Tidy README header visuals and badges ([99e11b7](https://github.com/Johannsis/Johannsis/commit/99e11b7afbb7d6af995c6d8d25e7669b4a46051c))
+
 ## [1.5.3](https://github.com/Johannsis/Johannsis/compare/v1.5.2...v1.5.3) (2026-04-27)
 
 
