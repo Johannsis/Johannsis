@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/Johannsis/Johannsis/compare/v1.6.2...v1.6.3) (2026-04-27)
+
+
+### Bug Fixes
+
+* adding style point events none test ([7d25ee1](https://github.com/Johannsis/Johannsis/commit/7d25ee195500338ef66d56f1daa958d65972b22c))
+
 ## [1.6.2](https://github.com/Johannsis/Johannsis/compare/v1.6.1...v1.6.2) (2026-04-27)
 
 
