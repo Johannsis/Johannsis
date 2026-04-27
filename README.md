@@ -17,7 +17,6 @@
 
 [![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?label=repo+stars&style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
 [![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/network/members)
-[![GitHub Release Badge](https://img.shields.io/github/v/release/Johannsis/Johannsis)](https://github.com/Johannsis/Johannsis/releases)
 [![Pull Request Badge](https://img.shields.io/github/issues-pr/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/pulls)
 [![Issues Badge](https://img.shields.io/github/issues/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/issues)
 [![GitHub Contributors Badge](https://img.shields.io/github/contributors/Johannsis/Johannsis?logo=github)](https://github.com/Johannsis/Johannsis/graphs/contributors)
@@ -35,7 +34,9 @@
 
 ## 🔎 About me
 
-[![Johannsis's About Me Information](https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain)](https://coolreadme.xyz/)
+<div align="center">
+  <img src="https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain" alt="Johannsis's About Me Information" />
+</div>
 
 <img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="100%" height="50" />
 
@@ -72,22 +73,24 @@
 
 <img src="https://webpets-flame.vercel.app/generated/horse/warrior_run_8fps.gif" alt="Horse Run" width="100%" height="50" />
 
-## 🌱 GitHub Stats
+## 🌱 GitHub Statistics and Activity
 
-<div align="center" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;margin-bottom:20px;">
-  <div align="center" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
-    <img align="right" height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
-    <img align="left" height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+<details>
+  <summary>Click to expand Stats</summary>
+  <br />
+  <div align="center">
+    <img height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+    <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
+    <img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
+    <img height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
   </div>
-  <div align="center" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
-    <img align="right" height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
-    <img align="left" height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
-  </div>
-</div>
+</details>
 
 <img  src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="100%" height="50" />
 
-## 📶 Recent GitHub Activity
+<details>
+  <summary>Click to expand activity</summary>
+  <br />
 
 <!--START_SECTION:activity-->
 
@@ -106,12 +109,14 @@
 
 <!--END_SECTION:activity-->
 
+</details>
+
 <img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="100%" height="50" />
 
 ## ✨ Random Dev Quote
 
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Developer Quote" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=dark" alt="Random Developer Quote" />
 </div>
 
 <img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="100%" height="50" />
