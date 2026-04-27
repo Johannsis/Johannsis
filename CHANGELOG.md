@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/Johannsis/Johannsis/compare/v1.7.0...v1.7.1) (2026-04-27)
+
+
+### Bug Fixes
+
+* mention special thanks in README.md ([872bd97](https://github.com/Johannsis/Johannsis/commit/872bd97d812a4ab0beec9f669d39caf707038c23))
+
 # [1.7.0](https://github.com/Johannsis/Johannsis/compare/v1.6.4...v1.7.0) (2026-04-27)
 
 
