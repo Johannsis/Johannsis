@@ -1,3 +1,10 @@
+## [1.5.6](https://github.com/Johannsis/Johannsis/compare/v1.5.5...v1.5.6) (2026-04-27)
+
+
+### Bug Fixes
+
+* Update image alt text to 'Deno Walk' ([37564bf](https://github.com/Johannsis/Johannsis/commit/37564bf6659cc4d74bab05cf48ab0dd8eab6ba2f))
+
 ## [1.5.5](https://github.com/Johannsis/Johannsis/compare/v1.5.4...v1.5.5) (2026-04-27)
 
 
