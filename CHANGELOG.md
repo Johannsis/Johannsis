@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/Johannsis/Johannsis/compare/v1.6.0...v1.6.1) (2026-04-27)
+
+
+### Bug Fixes
+
+* Left-align stats images in README ([1c1f240](https://github.com/Johannsis/Johannsis/commit/1c1f24001ff44fc2f67e334c64cb5fbaaa4f32ea))
+
 # [1.6.0](https://github.com/Johannsis/Johannsis/compare/v1.5.6...v1.6.0) (2026-04-27)
 
 
