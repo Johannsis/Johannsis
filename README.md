@@ -174,16 +174,16 @@
   <summary>Click to expand the stats</summary>
   <br />
   <a href="#">
-    <img height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+    <img align="left" height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
   </a>
   <a href="#">
-    <img height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
+    <img align="left" height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
   </a>
   <a href="#">
-    <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
+    <img align="left" height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
   </a>
   <a href="#">
-    <img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
+    <img align="left" height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
   </a>
 </details>
 
