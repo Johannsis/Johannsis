@@ -1,3 +1,11 @@
+## [1.5.14](https://github.com/Johannsis/Johannsis/compare/v1.5.13...v1.5.14) (2026-04-27)
+
+
+### Bug Fixes
+
+* Add manual trigger to README build workflow ([8d74b47](https://github.com/Johannsis/Johannsis/commit/8d74b47307578bb9fceaab4d827a0aee39f8d316))
+* typo ([d66559e](https://github.com/Johannsis/Johannsis/commit/d66559e52ffce406435f99eb358ce4a4bf17fd47))
+
 ## [1.5.13](https://github.com/Johannsis/Johannsis/compare/v1.5.12...v1.5.13) (2026-04-27)
 
 
