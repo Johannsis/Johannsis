@@ -206,9 +206,6 @@
 3. 🚀 Published release
    [v1.0.1](https://github.com/Johannsis/portfolio/releases/tag/v1.0.1) in
    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
-4. 🚀 Published release
-   [v1.0.0](https://github.com/Johannsis/portfolio/releases/tag/v1.0.0) in
-   [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 
 <!--END_SECTION:activity-->
 
