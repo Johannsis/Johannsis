@@ -1,15 +1,18 @@
-<a href="#" align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!" alt="Johannsis's Typing SVG" />
-</a>
-
-<a align="center">
-  <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="100%" height="50" />
-</a>
 <div align="center">
 
-[![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
+![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)
+
+</div>
+
+<a>
+  <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Duck Walk" width="100%" height="50" />
+</a>
+
+<div align="center">
+
+![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)
 [![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](https://github.com/Johannsis?tab=followers)
-[![GitHub User's Stars Badge](https://img.shields.io/github/stars/Johannsis?label=user+stars&style=flat&logo=github)](#)
+![GitHub User's Stars Badge](https://img.shields.io/github/stars/Johannsis?label=user+stars&style=flat&logo=github)
 
 [![Johannsis's Gmail Link Icon](https://skillicons.dev/icons?i=gmail)](mailto:johanneshoersch@gmail.com)
 [![Johannsis's LinkedIn Link Icon](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/johanneshoersch/)
@@ -31,7 +34,7 @@
 
 </div>
 
-<a href="#" align="center">
+<a>
   <img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="100%" height="50" />
 </a>
 
