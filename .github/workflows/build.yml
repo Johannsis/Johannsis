@@ -32,7 +32,7 @@ jobs:
 
       - name: Update README file
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           USER_NAME: ${{ secrets.USER_NAME }}
         run: bun run today
 
