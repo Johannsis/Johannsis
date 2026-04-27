@@ -235,3 +235,62 @@ Example (Markdown):
 ```md
 ![Random Developer Quote](https://quotes-github-readme.vercel.app/api?type=vertical&theme=dark)
 ```
+
+## 12) Snake Contributions Generator
+
+![Snake Contributions](https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg)
+
+Source page:
+[https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid](https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid)
+
+Use the source page for setup details, and use this repository's workflow as a practical reference.
+
+Example (HTML `img`):
+
+```html
+<img
+  src="https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg"
+  alt="Snake Contributions"
+/>
+```
+
+Example (Markdown):
+
+```md
+![Snake Contributions](https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg)
+```
+
+## 13) Update README with GitHub Activity
+
+<!--START_SECTION:activity-->
+
+1. 🚀 Published release
+   [v1.6.0](https://github.com/Johannsis/Johannsis/releases/tag/v1.6.0) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+2. 🚀 Published release
+   [v1.5.14](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.14) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+3. 🚀 Published release
+   [v1.5.13](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.13) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+
+<!--END_SECTION:activity-->
+
+Source page:
+[https://github.com/jamesgeorge007/github-activity-readme](https://github.com/jamesgeorge007/github-activity-readme)
+
+Use the source page for setup details, and use this repository's workflow as a practical reference.
+
+Example (HTML `img`):
+
+```html
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+```
+
+Example (Markdown):
+
+```md
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+```
