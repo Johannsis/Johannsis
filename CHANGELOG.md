@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/Johannsis/Johannsis/compare/v1.4.1...v1.4.2) (2026-04-27)
+
+
+### Bug Fixes
+
+* Update README.md about section ([534dbbd](https://github.com/Johannsis/Johannsis/commit/534dbbd6e55f3124d67d92f0e5da161e395a1189))
+
 ## [1.4.1](https://github.com/Johannsis/Johannsis/compare/v1.4.0...v1.4.1) (2026-04-27)
 
 
