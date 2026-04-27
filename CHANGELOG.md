@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/Johannsis/Johannsis/compare/v1.6.3...v1.6.4) (2026-04-27)
+
+
+### Bug Fixes
+
+* remove style property since github README strips it ([55bf20c](https://github.com/Johannsis/Johannsis/commit/55bf20c7f31ebd48a41211abd58c4fb82715d7da))
+
 ## [1.6.3](https://github.com/Johannsis/Johannsis/compare/v1.6.2...v1.6.3) (2026-04-27)
 
 
