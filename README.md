@@ -40,6 +40,13 @@
 
 ## 🔎 About me
 
+<a href="#">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Johannsis/Johannsis/main/dark_mode.svg">
+    <img alt="Johannsis's GitHub Profile README" src="https://raw.githubusercontent.com/Johannsis/Johannsis/main/light_mode.svg">
+  </picture>
+</a>
+
 <div align="center">
   <a href="#">
     <img src="https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain" alt="Johannsis's About Me Information" />
