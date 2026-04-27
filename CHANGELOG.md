@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/Johannsis/Johannsis/compare/v1.5.6...v1.6.0) (2026-04-27)
+
+
+### Bug Fixes
+
+* Normalize JSON formatting in config files ([0c13727](https://github.com/Johannsis/Johannsis/commit/0c13727f56d95cc9972d179b517aca0a3d2a796e))
+
+
+### Features
+
+* readjusted README ([dfbdd40](https://github.com/Johannsis/Johannsis/commit/dfbdd40a4d5fab4159e9f2d88666cdcda68a9b9f))
+
 ## [1.5.7](https://github.com/Johannsis/Johannsis/compare/v1.5.6...v1.5.7) (2026-04-27)
 
 
