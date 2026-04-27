@@ -30,7 +30,7 @@
 
 ## 🔎 About me
 
-[![Johannsis's About Me Information](https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain)](https://coolreadme.xyz/)
+[![Johannsis's About Me Information](https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.96&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain)](https://coolreadme.xyz/)
 <a href="https://webpets-flame.vercel.app">
 <img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="900"/>
 <a/>
