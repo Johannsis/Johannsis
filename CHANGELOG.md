@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/Johannsis/Johannsis/compare/v1.4.0...v1.5.0) (2026-04-27)
+
+
+### Bug Fixes
+
+* Remove push trigger from workflow ([aa5bba9](https://github.com/Johannsis/Johannsis/commit/aa5bba95d59696a86cdf677d4892f67caa81b13c))
+
+
+### Features
+
+* Refactor README layout & icons; update biome.json ([1717f75](https://github.com/Johannsis/Johannsis/commit/1717f75dd2194143db5714383a2e4f62db367dd2))
+
 # [1.4.0](https://github.com/Johannsis/Johannsis/compare/v1.3.0...v1.4.0) (2026-04-27)
 
 
