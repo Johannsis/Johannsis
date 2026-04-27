@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/Johannsis/Johannsis/compare/v1.3.0...v1.4.0) (2026-04-26)
+
+
+### Bug Fixes
+
+* Set workflow target branch to output ([a0111a4](https://github.com/Johannsis/Johannsis/commit/a0111a4f472296694e64073d9f993984b6222ced))
+
+
+### Features
+
+* Add workflow to generate snake contributions SVG ([b7fcd8f](https://github.com/Johannsis/Johannsis/commit/b7fcd8fbd6dcb5a9a63982abc12f1e2b61c0c847))
+
 # [1.3.0](https://github.com/Johannsis/Johannsis/compare/v1.2.0...v1.3.0) (2026-04-26)
 
 
