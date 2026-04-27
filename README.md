@@ -153,7 +153,7 @@
 </table>
 
 <a href="#">
-  <img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="100%" height="50" />
+  <img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Deno Walk" width="100%" height="50" />
 </a>
 
 ## 🙋🏽‍♂️ Contributions
