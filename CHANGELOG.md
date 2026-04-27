@@ -1,3 +1,10 @@
+## [1.5.9](https://github.com/Johannsis/Johannsis/compare/v1.5.8...v1.5.9) (2026-04-27)
+
+
+### Bug Fixes
+
+* Use GITHUB_TOKEN in build workflow ([96582ca](https://github.com/Johannsis/Johannsis/commit/96582cae54d4f0daa50f78e05832e16215b9fbb0))
+
 ## [1.5.8](https://github.com/Johannsis/Johannsis/compare/v1.5.7...v1.5.8) (2026-04-27)
 
 
