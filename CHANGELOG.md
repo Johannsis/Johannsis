@@ -1,3 +1,10 @@
+## [1.5.13](https://github.com/Johannsis/Johannsis/compare/v1.5.12...v1.5.13) (2026-04-27)
+
+
+### Bug Fixes
+
+* Switch README job to Python and clean up ([3a2ddee](https://github.com/Johannsis/Johannsis/commit/3a2ddee0ea9ad79a21a713925755599d4be6ef95))
+
 ## [1.5.12](https://github.com/Johannsis/Johannsis/compare/v1.5.11...v1.5.12) (2026-04-27)
 
 
