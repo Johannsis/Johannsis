@@ -1,3 +1,10 @@
+## [1.5.12](https://github.com/Johannsis/Johannsis/compare/v1.5.11...v1.5.12) (2026-04-27)
+
+
+### Bug Fixes
+
+* Add light/dark SVGs; format script/today.ts ([2a756cf](https://github.com/Johannsis/Johannsis/commit/2a756cf6265eec28a43f199b92c61e8c05dd4dc1))
+
 ## [1.5.11](https://github.com/Johannsis/Johannsis/compare/v1.5.10...v1.5.11) (2026-04-27)
 
 
