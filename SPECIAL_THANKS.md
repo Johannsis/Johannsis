@@ -243,7 +243,8 @@ Example (Markdown):
 Source page:
 [https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid](https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid)
 
-Use the source page for setup details, and use this repository's workflow as a practical reference.
+Use the source page for setup details, and use this repository's workflow as a
+practical reference.
 
 Example (HTML `img`):
 
@@ -279,18 +280,12 @@ Example (Markdown):
 Source page:
 [https://github.com/jamesgeorge007/github-activity-readme](https://github.com/jamesgeorge007/github-activity-readme)
 
-Use the source page for setup details, and use this repository's workflow as a practical reference.
+Use the source page for setup details, and use this repository's workflow as a
+practical reference.
 
-Example (HTML `img`):
+Example (HTML and Markdown):
 
 ```html
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
-```
-
-Example (Markdown):
-
-```md
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
 ```
