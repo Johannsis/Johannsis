@@ -1,15 +1,19 @@
-[![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)](https://readme-typing-svg.herokuapp.com)
-<a href="https://webpets-flame.vercel.app">
-<img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="900" height="50"/>
-<a/>
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!" alt="Johannsis's Typing SVG" />
+</div>
+
+<img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Rubber Duck Walk" width="100%" height="50" />
+
+<div align="center">
 
 [![Profile Views Badge](https://komarev.com/ghpvc/?username=Johannsis&color=blue)](#)
 [![GitHub Followers Badge](https://img.shields.io/github/followers/Johannsis?style=flat&logo=github)](https://github.com/Johannsis?tab=followers)
 [![GitHub User's Stars Badge](https://img.shields.io/github/stars/Johannsis?label=user+stars&style=flat&logo=github)](#)
 
-[![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white&style=flat-square)](mailto:johanneshoersch@gmail.com)
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/johanneshoersch/)
-[![X Badge](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white&style=flat-square&labelColor=3c3c3c&color=3c3c3c)](https://x.com/HoerschJoh4010)
+[![Johannsis's Gmail Link Icon](https://skillicons.dev/icons?i=gmail)](mailto:johanneshoersch@gmail.com)
+[![Johannsis's LinkedIn Link Icon](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/johanneshoersch/)
+[![Johannsis's X Link Icon](https://go-skill-icons.vercel.app/api/icons?i=x)](https://x.com/HoerschJoh4010)
+[![Johannsis's Reddit Link Icon](https://go-skill-icons.vercel.app/api/icons?i=reddit)](https://www.reddit.com/user/Horschy)
 
 [![Repo Stars Badge](https://img.shields.io/github/stars/Johannsis/Johannsis?label=repo+stars&style=flat&logo=github)](https://github.com/Johannsis/Johannsis/stargazers)
 [![Forks Badge](https://img.shields.io/github/forks/Johannsis/Johannsis?style=flat&logo=github)](https://github.com/Johannsis/Johannsis/network/members)
@@ -24,18 +28,20 @@
 [![Release to changelog and tags Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/automatic-release.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/automatic-release.yml)
 [![Generate Snake Animation with Contributions Graph](https://github.com/Johannsis/Johannsis/actions/workflows/snake-grid-contributions-generator.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/snake-grid-contributions-generator.yml)
 [![Dependabot Updates Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/dependabot/dependabot-updates)
-<a href="https://webpets-flame.vercel.app">
-<img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="900"/>
-<a/>
+
+</div>
+
+<img src="https://webpets-flame.vercel.app/generated/crab/red_walk_8fps.gif" alt="Crab Walk" width="100%" height="50" />
 
 ## 🔎 About me
 
 [![Johannsis's About Me Information](https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.26&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain)](https://coolreadme.xyz/)
-<a href="https://webpets-flame.vercel.app">
-<img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="900"/>
-<a/>
+
+<img src="https://webpets-flame.vercel.app/generated/clippy/black_run_8fps.gif" alt="Clippy Run" width="100%" height="50" />
 
 ## 🖥️ Tech Stack
+
+<div align="center">
 
 | **Type**                 | **Tools**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,46 +60,34 @@
 | **Platforms**            | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/) [![Temenos Transact](<https://img.shields.io/badge/Temenos_Transact_(T24)-%23007ACC>)](https://www.temenos.com/resource/temenos-transact-brochure/) [![Jira](https://img.shields.io/badge/Jira-%230A0FFF.svg?logo=jira&logoColor=white)](https://www.atlassian.com/software/jira)                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **IDEs**                 | [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/) [![Zed](https://img.shields.io/badge/Zed-084CCF.svg?logo=zedindustries&logoColor=white)](https://zed.dev/) [![Xcode](https://img.shields.io/badge/Xcode-007ACC?logo=Xcode&logoColor=white)](https://developer.apple.com/xcode/) [![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?logo=android-studio&logoColor=white)](https://developer.android.com/studio)                                                                                                                                                                                                                                                                                                             |
 
-<a href="https://webpets-flame.vercel.app">
-  <img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="900" height="50" />
-<a/>
+</div>
+
+<img src="https://webpets-flame.vercel.app/generated/deno/green_walk_8fps.gif" alt="Dinosaur Walk" width="100%" height="50" />
 
 ## 🙋🏽‍♂️ Contributions
 
-[![Johannsis's Snake Contributions Graph Animation](https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg)](https://github.com/Platane/Platane)
-<a href="https://webpets-flame.vercel.app">
-<img src="https://webpets-flame.vercel.app/generated/horse/warrior_run_8fps.gif" alt="Horse Run" width="900"/>
-<a/>
-
-## 🌱 Stats
-
-### GitHub Stats
-
 <div align="center">
-  <a href="https://github-readme-stats.vercel.app">
-    <img align="left" height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
-  </a>
-  <a href="https://streak-stats.demolab.com">
-    <img align="right" height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
-  </a>
-<div/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<div align="center">
-  <a href="https://github-readme-stats.vercel.app">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
-  </a>
+  <img src="https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg" alt="Johannsis's Snake Contributions Graph Animation" />
 </div>
-<br/>
-<div align="center">
-  <a align="right" href="https://github-profile-summary-cards.vercel.app">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
-  </a>
-<div/>
-<a href="https://webpets-flame.vercel.app">
-  <img src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="900" height="50" />
-<a/>
 
-## Recent GitHub Activity
+<img src="https://webpets-flame.vercel.app/generated/horse/warrior_run_8fps.gif" alt="Horse Run" width="100%" height="50" />
+
+## 🌱 GitHub Stats
+
+<div align="center" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;margin-bottom:20px;">
+  <div align="center" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+    <img align="right" height="160" src="https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Streak Stats" />
+    <img align="left" height="160" src="https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true" alt="Johannsis's GitHub Stats" />
+  </div>
+  <div align="center" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+    <img align="right" height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true&layout=compact" alt="Johannsis's Top Languages" />
+    <img align="left" height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark" alt="Johannsis's Summary Graph" />
+  </div>
+</div>
+
+<img  src="https://webpets-flame.vercel.app/generated/panda/black_walk_8fps.gif" alt="Fire Dog Run" width="100%" height="50" />
+
+## 📶 Recent GitHub Activity
 
 <!--START_SECTION:activity-->
 
@@ -109,17 +103,15 @@
 4. 🚀 Published release
    [v1.0.0](https://github.com/Johannsis/portfolio/releases/tag/v1.0.0) in
    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
-   <!--END_SECTION:activity-->
-   <a href="https://webpets-flame.vercel.app">
-     <img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="900" height="50" />
-   <a/>
 
-<hr>
-<h3>✨ Random Dev Quote</h3>
-<p>
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Dev Quote" />
-</p>
-<hr>
-<a href="https://webpets-flame.vercel.app">
-  <img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="900" height="50" />
-</a>
+<!--END_SECTION:activity-->
+
+<img src="https://webpets-flame.vercel.app/generated/dog/red_run_8fps.gif" alt="Dog Fire Walk" width="100%" height="50" />
+
+## ✨ Random Dev Quote
+
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Developer Quote" />
+</div>
+
+<img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="100%" height="50" />
