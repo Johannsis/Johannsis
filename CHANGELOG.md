@@ -1,3 +1,10 @@
+## [1.5.10](https://github.com/Johannsis/Johannsis/compare/v1.5.9...v1.5.10) (2026-04-27)
+
+
+### Bug Fixes
+
+* test today script ([4d6a189](https://github.com/Johannsis/Johannsis/commit/4d6a189f306ad96bd3a4a039e9632f799a49170e))
+
 ## [1.5.9](https://github.com/Johannsis/Johannsis/compare/v1.5.8...v1.5.9) (2026-04-27)
 
 
