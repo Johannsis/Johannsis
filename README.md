@@ -1,10 +1,10 @@
 <div align="center">
 
-![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)
+[![Johannsis's Typing SVG](https://readme-typing-svg.herokuapp.com?font=Verdana&size=40&pause=500&color=65E097&center=true&vCenter=true&multiline=true&repeat=false&width=900&height=75&lines=Hello,+I'm+Johannes+Hoersch!)]()
 
 </div>
 
-<a>
+<a href="#no-link">
   <img src="https://webpets-flame.vercel.app/generated/rubber-duck/yellow_walk_8fps.gif" alt="Duck Walk" width="100%" height="50" />
 </a>
 
