@@ -236,3 +236,10 @@
 <a href="#">
   <img src="https://webpets-flame.vercel.app/generated/fox/white_run_8fps.gif" alt="Running White Fox" width="100%" height="50" />
 </a>
+
+## 🙏 Special Thanks
+
+If you want to use the same external README services (typing banners, badges,
+icons, stats cards, and more), check:
+
+[SPECIAL_THANKS.md](https://github.com/Johannsis/Johannsis/blob/main/SPECIAL_THANKS.md)
