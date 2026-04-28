@@ -171,7 +171,7 @@
   <img src="https://webpets-flame.vercel.app/generated/horse/warrior_run_8fps.gif" alt="Horse Run" width="100%" height="50" />
 </a>
 
-## 🌱 GitHub Statistics and Activity
+## 🌱 GitHub Data
 
 <details>
   <summary>Click to expand the stats</summary>
@@ -232,6 +232,14 @@
    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 
 <!--END_SECTION:activity-->
+
+</details>
+
+<details>
+  <summary>Click to expand the trophies</summary>
+  <br />
+
+[![Johannsis's GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Johannsis&&theme=aura)](#)
 
 </details>
 
