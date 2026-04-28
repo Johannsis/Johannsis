@@ -42,7 +42,10 @@
 
 <div align="center">
   <a href="#">
-    <img src="https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.96&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain" alt="Johannsis's About Me Information" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Johannsis/Johannsis/test-branch/assets/dark_mode.svg">
+      <img alt="Andrew Grant's GitHub Profile README" src="https://raw.githubusercontent.com/Johannsis/Johannsis/test-branch/assets/light_mode.svg">
+    </picture>
   </a>
 </div>
 
@@ -197,23 +200,34 @@
 
 <!--START_SECTION:activity-->
 
-1. 💪 Opened PR [#1700](https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1700) in [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme)
-2. 🚀 Published release [v1.7.2](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.2) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-3. 🚀 Published release [v1.7.1](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.1) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-4. 🚀 Published release [v1.7.0](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.0) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-5. 🚀 Published release [v1.6.4](https://github.com/Johannsis/Johannsis/releases/tag/v1.6.4) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+1. 💪 Opened PR
+   [#1700](https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1700)
+   in
+   [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme)
+2. 🚀 Published release
+   [v1.7.2](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.2) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 3. 🚀 Published release
-   [v1.5.13](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.13) in
+   [v1.7.1](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.1) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 4. 🚀 Published release
-   [v1.5.12](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.12) in
+   [v1.7.0](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.0) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 5. 🚀 Published release
+   [v1.6.4](https://github.com/Johannsis/Johannsis/releases/tag/v1.6.4) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+6. 🚀 Published release
+   [v1.5.13](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.13) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+7. 🚀 Published release
+   [v1.5.12](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.12) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+8. 🚀 Published release
    [v1.5.11](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.11) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
-6. 🚀 Published release
+9. 🚀 Published release
    [v1.0.1](https://github.com/Johannsis/portfolio/releases/tag/v1.0.1) in
    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 

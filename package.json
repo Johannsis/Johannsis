@@ -21,6 +21,7 @@
     "url": "git+https://github.com/Johannsis/Johannsis.git"
   },
   "scripts": {
+    "about": "bun run scripts/about.ts",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format . --write",
@@ -34,7 +35,9 @@
     "@semantic-release/github": "^12.0.6",
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.0",
-    "prettier": "^3.8.3"
+    "@types/node": "^25.6.0",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
   },
   "engines": {
     "bun": "^1.3.13",
