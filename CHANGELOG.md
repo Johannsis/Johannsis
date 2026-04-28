@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/Johannsis/Johannsis/compare/v1.7.4...v1.7.5) (2026-04-28)
+
+
+### Bug Fixes
+
+* Refactor stats SVG generation in about.ts ([92b2360](https://github.com/Johannsis/Johannsis/commit/92b236033fb030a5c90025d630e4b9191319438a))
+
 ## [1.7.4](https://github.com/Johannsis/Johannsis/compare/v1.7.3...v1.7.4) (2026-04-28)
 
 
