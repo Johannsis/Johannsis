@@ -273,6 +273,9 @@ function createStatsSvg(
   const propertyValueX = 1520;
   const propertyDotWidth = 44;
   const statsDotWidth = 44;
+  const githubStatsHeaderY = 734;
+  const githubStatsStartY = 776;
+  const githubStatsLineGap = 42;
   const asciiTspans = buildAsciiTspans(
     asciiLines,
     asciiBlockX,
@@ -312,7 +315,7 @@ function createStatsSvg(
 
   const githubStatsText = githubStatsRows
     .map(([label, currentValue], index) => {
-      const y = 902 + index * 42;
+      const y = githubStatsStartY + index * githubStatsLineGap;
       const valueText = escapeXml(currentValue);
       const renderedValue =
         label === "Lines of Code:"
@@ -345,7 +348,7 @@ function createStatsSvg(
   <line x1="${dividerX}" y1="22" x2="${dividerX}" y2="1058" stroke="${border}" />
   <text x="${rightColumnX}" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
   ${propertyText}
-  <text x="${rightColumnX}" y="860" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
+  <text x="${rightColumnX}" y="${githubStatsHeaderY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
   ${githubStatsText}
   <text x="28" y="96" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="${text}">
       ${asciiTspans}
