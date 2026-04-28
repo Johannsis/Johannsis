@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/Johannsis/Johannsis/compare/v1.7.2...v1.7.3) (2026-04-28)
+
+
+### Bug Fixes
+
+* Add scheduled README updater workflow ([0fa0fa6](https://github.com/Johannsis/Johannsis/commit/0fa0fa6396985972c4a1f23205cc0dde0571b22e))
+
 ## [1.7.2](https://github.com/Johannsis/Johannsis/compare/v1.7.1...v1.7.2) (2026-04-27)
 
 
