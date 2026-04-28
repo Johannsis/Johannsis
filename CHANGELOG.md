@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/Johannsis/Johannsis/compare/v1.9.0...v1.9.1) (2026-04-28)
+
+
+### Bug Fixes
+
+* Reference ascii-art.txt in scripts/about.ts ([1372711](https://github.com/Johannsis/Johannsis/commit/137271177449150a7fa9d38e245716959404fe5d))
+
 # [1.9.0](https://github.com/Johannsis/Johannsis/compare/v1.8.0...v1.9.0) (2026-04-28)
 
 
