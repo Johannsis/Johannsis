@@ -1,3 +1,10 @@
+## [1.9.6](https://github.com/Johannsis/Johannsis/compare/v1.9.5...v1.9.6) (2026-04-28)
+
+
+### Bug Fixes
+
+* Revise profile props and LOC SVG layout ([0b7c6cc](https://github.com/Johannsis/Johannsis/commit/0b7c6cc25987e1f9f79b052da387a3796e2c28aa))
+
 ## [1.9.5](https://github.com/Johannsis/Johannsis/compare/v1.9.4...v1.9.5) (2026-04-28)
 
 
