@@ -1,12 +1,30 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+// Keep this to about 10 properties or less so the SVG layout does not hide text or overflow.
+// biome-ignore assist/source/useSortedKeys: Do not sort these, they are in a deliberate order for display purposes.
 const profileProperties: Record<string, string> = {
-  API: "GitHub REST API",
-  Host: "GitHub Profile README",
-  OS: "macOS",
-  Uptime: "Since 1996",
+  Name: "Johannes Hoersch",
+  Age: `${new Date().getFullYear() - 1996} years`,
+  Languages: "English, Spanish, Italian",
+  Website: "https://johannsis.github.io/portfolio",
+  IDE: "Zed, VSCode",
+  OS: "Windows, Linux, macOS",
 };
+
+// Keep the ascii-art.txt around 47 lines and 80 characters wide for best results.
+async function writeStatsSvgs(data: CardData): Promise<void> {
+  const asciiPath = path.join(process.cwd(), "assets", "ascii-art.txt");
+  const asciiRaw = await readFile(asciiPath, "utf8");
+  const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
+
+  const assetsDir = path.join(process.cwd(), "assets");
+  const darkSvg = createStatsSvg("dark", asciiLines, data);
+  const lightSvg = createStatsSvg("light", asciiLines, data);
+
+  await writeFile(path.join(assetsDir, "dark_mode.svg"), darkSvg, "utf8");
+  await writeFile(path.join(assetsDir, "light_mode.svg"), lightSvg, "utf8");
+}
 
 function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
   const value = process.env[name];
@@ -271,6 +289,7 @@ function createStatsSvg(
   const dividerX = 710;
   const rightColumnX = 740;
   const propertyValueX = 1520;
+  const statsDetailX = 768;
   const propertyDotWidth = 44;
   const statsDotWidth = 44;
   const githubStatsHeaderY = 734;
@@ -307,24 +326,29 @@ function createStatsSvg(
     ["Stars:", data.stars.toLocaleString("en-US")],
     ["Commits:", data.commits.toLocaleString("en-US")],
     ["Followers:", data.followers.toLocaleString("en-US")],
-    [
-      "Lines of Code:",
-      `${data.locTotal.toLocaleString("en-US")} (${data.locAdd.toLocaleString("en-US")}++, ${data.locDel.toLocaleString("en-US")}--)`,
-    ],
+    ["Lines of Code:", data.locTotal.toLocaleString("en-US")],
   ];
 
   const githubStatsText = githubStatsRows
     .map(([label, currentValue], index) => {
       const y = githubStatsStartY + index * githubStatsLineGap;
-      const valueText = escapeXml(currentValue);
-      const renderedValue =
-        label === "Lines of Code:"
-          ? `${escapeXml(data.locTotal.toLocaleString("en-US"))}<tspan fill="${muted}"> (</tspan><tspan fill="${green}">${escapeXml(`${data.locAdd.toLocaleString("en-US")}++`)}</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${escapeXml(`${data.locDel.toLocaleString("en-US")}--`)}</tspan><tspan fill="${muted}">)</tspan>`
-          : valueText;
-
       if (label === "Lines of Code:") {
-        const dotGap = buildDotGap(label, currentValue, statsDotWidth);
-        return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(label)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${propertyValueX}" text-anchor="end" fill="${value}">${renderedValue}</tspan></text>`;
+        const breakdownY = y + githubStatsLineGap;
+        const breakdownText = `${data.locAdd.toLocaleString("en-US")}++, ${data.locDel.toLocaleString("en-US")}--`;
+
+        return `${buildAlignedRow({
+          dotWidth: statsDotWidth,
+          fontSize: 26,
+          label,
+          labelColor: accent,
+          muted,
+          rightColumnX,
+          value: currentValue,
+          valueColor: value,
+          valueX: propertyValueX,
+          y,
+        })}
+  <text x="${statsDetailX}" y="${breakdownY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">(</tspan><tspan fill="${green}">${escapeXml(`${data.locAdd.toLocaleString("en-US")}++`)}</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${escapeXml(`${data.locDel.toLocaleString("en-US")}--`)}</tspan><tspan fill="${muted}">)</tspan></text>`;
       }
 
       return buildAlignedRow({
@@ -355,19 +379,6 @@ function createStatsSvg(
   </text>
 </svg>
 `;
-}
-
-async function writeStatsSvgs(data: CardData): Promise<void> {
-  const asciiPath = path.join(process.cwd(), "assets", "ascii-art.txt");
-  const asciiRaw = await readFile(asciiPath, "utf8");
-  const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
-
-  const assetsDir = path.join(process.cwd(), "assets");
-  const darkSvg = createStatsSvg("dark", asciiLines, data);
-  const lightSvg = createStatsSvg("light", asciiLines, data);
-
-  await writeFile(path.join(assetsDir, "dark_mode.svg"), darkSvg, "utf8");
-  await writeFile(path.join(assetsDir, "light_mode.svg"), lightSvg, "utf8");
 }
 
 async function main(): Promise<void> {
