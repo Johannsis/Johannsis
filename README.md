@@ -15,7 +15,7 @@
 [![GitHub User's Stars Badge](https://img.shields.io/github/stars/Johannsis?label=user+stars&style=flat&logo=github)](#)
 
 [![Johannsis's Gmail Link Icon](https://skillicons.dev/icons?i=gmail)](mailto:johanneshoersch@gmail.com)
-[![Johannsis's LinkedIn Link Icon](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/johanneshoersch/)
+[![Johannsis's LinkedIn Link Icon](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/johanneshoersch)
 [![Johannsis's X Link Icon](https://go-skill-icons.vercel.app/api/icons?i=x)](https://x.com/HoerschJoh4010)
 [![Johannsis's Reddit Link Icon](https://go-skill-icons.vercel.app/api/icons?i=reddit)](https://www.reddit.com/user/Horschy)
 
