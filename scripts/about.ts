@@ -299,7 +299,6 @@ function createStatsSvg(
   const dividerX = 710;
   const rightColumnX = 740;
   const propertyValueX = 1520;
-  const cardRightX = 1572;
   const statsDetailX = 768;
   const propertyDotWidth = 44;
   const statsDotWidth = 44;
@@ -380,13 +379,13 @@ function createStatsSvg(
   const profileHeaderBar = buildDashGap(
     `${USER_NAME}@github`,
     rightColumnX,
-    cardRightX,
+    propertyValueX,
     headerFontSize,
   );
   const githubStatsBar = buildDashGap(
     "— GitHub Stats",
     rightColumnX,
-    cardRightX,
+    propertyValueX,
     headerFontSize,
   );
 
