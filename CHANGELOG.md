@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/Johannsis/Johannsis/compare/v1.9.3...v1.9.4) (2026-04-28)
+
+
+### Bug Fixes
+
+* Update SPECIAL_THANKS and adjust about SVG layout ([d3c115d](https://github.com/Johannsis/Johannsis/commit/d3c115d4e539bce80e387c4a5f11e5bbfe9c5e72))
+
 ## [1.9.3](https://github.com/Johannsis/Johannsis/compare/v1.9.2...v1.9.3) (2026-04-28)
 
 
