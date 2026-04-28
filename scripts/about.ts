@@ -194,10 +194,6 @@ function escapeXml(text: string): string {
     .replaceAll("'", "&apos;");
 }
 
-function dottedLabel(label: string, total = 30): string {
-  return `${label} ${".".repeat(Math.max(4, total - label.length))}`;
-}
-
 function buildDotGap(
   label: string,
   value: string,
@@ -224,6 +220,34 @@ function buildAsciiTspans(
     .join("\n      ");
 }
 
+function buildAlignedRow({
+  dotWidth,
+  fontSize,
+  label,
+  labelColor,
+  muted,
+  rightColumnX,
+  value,
+  valueColor,
+  valueX,
+  y,
+}: {
+  dotWidth: number;
+  fontSize: number;
+  label: string;
+  labelColor: string;
+  muted: string;
+  rightColumnX: number;
+  value: string;
+  valueColor: string;
+  valueX: number;
+  y: number;
+}): string {
+  const dotGap = buildDotGap(label, value, dotWidth);
+
+  return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${fontSize}"><tspan fill="${muted}">· </tspan><tspan fill="${labelColor}">${escapeXml(label)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${valueX}" text-anchor="end" fill="${valueColor}">${escapeXml(value)}</tspan></text>`;
+}
+
 function createStatsSvg(
   theme: "dark" | "light",
   asciiLines: string[],
@@ -248,9 +272,7 @@ function createStatsSvg(
   const rightColumnX = 740;
   const propertyValueX = 1520;
   const propertyDotWidth = 44;
-  const statsSeparatorX = 1240;
-  const statsMidLabelX = 1270;
-  const statsMidValueX = 1520;
+  const statsDotWidth = 44;
   const asciiTspans = buildAsciiTspans(
     asciiLines,
     asciiBlockX,
@@ -261,9 +283,59 @@ function createStatsSvg(
   const propertyText = propertyRows
     .map(([label, currentValue], index) => {
       const y = 102 + index * 42;
-      const propertyLabel = `${label}:`;
-      const dotGap = buildDotGap(propertyLabel, currentValue, propertyDotWidth);
-      return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(propertyLabel)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${propertyValueX}" text-anchor="end" fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
+      return buildAlignedRow({
+        dotWidth: propertyDotWidth,
+        fontSize: 26,
+        label: `${label}:`,
+        labelColor: accent,
+        muted,
+        rightColumnX,
+        value: currentValue,
+        valueColor: value,
+        valueX: propertyValueX,
+        y,
+      });
+    })
+    .join("\n  ");
+
+  const githubStatsRows: Array<[string, string]> = [
+    ["Repos:", data.repos.toLocaleString("en-US")],
+    ["Contributed:", data.contribRepos.toLocaleString("en-US")],
+    ["Stars:", data.stars.toLocaleString("en-US")],
+    ["Commits:", data.commits.toLocaleString("en-US")],
+    ["Followers:", data.followers.toLocaleString("en-US")],
+    [
+      "Lines of Code:",
+      `${data.locTotal.toLocaleString("en-US")} (${data.locAdd.toLocaleString("en-US")}++, ${data.locDel.toLocaleString("en-US")}--)`,
+    ],
+  ];
+
+  const githubStatsText = githubStatsRows
+    .map(([label, currentValue], index) => {
+      const y = 902 + index * 42;
+      const valueText = escapeXml(currentValue);
+      const renderedValue =
+        label === "Lines of Code:"
+          ? `${escapeXml(data.locTotal.toLocaleString("en-US"))}<tspan fill="${muted}"> (</tspan><tspan fill="${green}">${escapeXml(`${data.locAdd.toLocaleString("en-US")}++`)}</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${escapeXml(`${data.locDel.toLocaleString("en-US")}--`)}</tspan><tspan fill="${muted}">)</tspan>`
+          : valueText;
+
+      if (label === "Lines of Code:") {
+        const dotGap = buildDotGap(label, currentValue, statsDotWidth);
+        return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(label)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${propertyValueX}" text-anchor="end" fill="${value}">${renderedValue}</tspan></text>`;
+      }
+
+      return buildAlignedRow({
+        dotWidth: statsDotWidth,
+        fontSize: 26,
+        label,
+        labelColor: accent,
+        muted,
+        rightColumnX,
+        value: currentValue,
+        valueColor: value,
+        valueX: propertyValueX,
+        y,
+      });
     })
     .join("\n  ");
 
@@ -274,9 +346,7 @@ function createStatsSvg(
   <text x="${rightColumnX}" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
   ${propertyText}
   <text x="${rightColumnX}" y="860" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
-  <text x="${rightColumnX}" y="902" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {</tspan><tspan fill="${accent}">Contributed:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">}</tspan><tspan x="${statsSeparatorX}" fill="${muted}">|</tspan><tspan x="${statsMidLabelX}" fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan x="${statsMidValueX}" text-anchor="end" fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
-  <text x="${rightColumnX}" y="944" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ............ </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan x="${statsSeparatorX}" fill="${muted}">|</tspan><tspan x="${statsMidLabelX}" fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan x="${statsMidValueX}" text-anchor="end" fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
-  <text x="${rightColumnX}" y="986" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
+  ${githubStatsText}
   <text x="28" y="96" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="${text}">
       ${asciiTspans}
   </text>
