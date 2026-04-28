@@ -49,11 +49,14 @@ const profileProperties: ProfilePropertyGroup = {
   Name: "Johannes Hoersch",
   Age: getAgeLabel(),
   Languages: "English, Spanish, Italian",
-  IDE: "Zed, VSCode",
-  OS: "Windows, macOS",
   Contact: {
     Email: "johanneshoersch@gmail.com",
     Mobile: "+1 (829) 791-7414",
+  },
+  System: {
+    IDE: "Zed, VSCode",
+    Laptop: "MacBook Pro",
+    OS: "macOS, iOS",
   },
   Random: {
     "Favorite Character": "Kirby",
