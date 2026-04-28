@@ -1,3 +1,10 @@
+## [1.9.11](https://github.com/Johannsis/Johannsis/compare/v1.9.10...v1.9.11) (2026-04-28)
+
+
+### Bug Fixes
+
+* Update Biome scripts and editor/TS configs ([5622a3e](https://github.com/Johannsis/Johannsis/commit/5622a3e7da7bc30aef033cf2ea02025cf4f11617))
+
 ## [1.9.10](https://github.com/Johannsis/Johannsis/compare/v1.9.9...v1.9.10) (2026-04-28)
 
 
