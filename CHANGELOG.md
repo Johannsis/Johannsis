@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/Johannsis/Johannsis/compare/v1.10.2...v1.10.3) (2026-04-28)
+
+
+### Bug Fixes
+
+* Nest IDE and OS under System ([04aa0b5](https://github.com/Johannsis/Johannsis/commit/04aa0b5c029cd2432de9b65faa1d2dadf26108d1))
+
 ## [1.10.2](https://github.com/Johannsis/Johannsis/compare/v1.10.1...v1.10.2) (2026-04-28)
 
 
