@@ -261,6 +261,9 @@ The ASCII art in `assets/ascii-art.txt` was created from a profile picture with
 a transparent background using the converter at
 [https://www.asciiart.eu/image-to-ascii](https://www.asciiart.eu/image-to-ascii).
 
+Change profileProperties in `scripts/about.ts` as a practical reference for how
+to implement custom attributes and adjust the layout to your profile.
+
 Reference files in this repository:
 
 ```text
