@@ -5,38 +5,6 @@ const BIRTH_YEAR = 1996;
 const BIRTH_MONTH = 8;
 const BIRTH_DAY = 15;
 
-// Keep this to about 10 properties or less so the SVG layout does not hide text or overflow.
-// biome-ignore assist/source/useSortedKeys: Do not sort these, they are in a deliberate order for display purposes.
-const profileProperties: ProfilePropertyGroup = {
-  Name: "Johannes Hoersch",
-  Age: getAgeLabel(),
-  Languages: "English, Spanish, Italian",
-  IDE: "Zed, VSCode",
-  OS: "Windows, macOS",
-  Hobbies: "Gaming, Extreme Sports",
-  Contact: {
-    Email: "johanneshoersch@gmail.com",
-    Mobile: "+1 (829) 791 7414",
-  },
-  Random: {
-    "Favorite Character": "Kirby",
-  },
-};
-
-// Keep the ascii-art.txt around 47 lines and 80 characters wide for best results.
-async function writeStatsSvgs(data: CardData): Promise<void> {
-  const asciiPath = path.join(process.cwd(), "assets", "ascii-art.txt");
-  const asciiRaw = await readFile(asciiPath, "utf8");
-  const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
-
-  const assetsDir = path.join(process.cwd(), "assets");
-  const darkSvg = createStatsSvg("dark", asciiLines, data);
-  const lightSvg = createStatsSvg("light", asciiLines, data);
-
-  await writeFile(path.join(assetsDir, "dark_mode.svg"), darkSvg, "utf8");
-  await writeFile(path.join(assetsDir, "light_mode.svg"), lightSvg, "utf8");
-}
-
 type ProfilePropertyValue = string | ProfilePropertyGroup;
 
 type ProfilePropertyGroup = {
@@ -70,6 +38,38 @@ function getAgeLabel(today: Date = new Date()): string {
     today.getMonth() === BIRTH_MONTH_INDEX && today.getDate() === BIRTH_DAY;
 
   return `${age}${isBirthday ? "🎂" : ""}`;
+}
+
+// Keep this to about 10 properties or less so the SVG layout does not hide text or overflow.
+// biome-ignore assist/source/useSortedKeys: Do not sort these, they are in a deliberate order for display purposes.
+const profileProperties: ProfilePropertyGroup = {
+  Name: "Johannes Hoersch",
+  Age: getAgeLabel(),
+  Languages: "English, Spanish, Italian",
+  IDE: "Zed, VSCode",
+  OS: "Windows, macOS",
+  Hobbies: "Gaming, Extreme Sports",
+  Contact: {
+    Email: "johanneshoersch@gmail.com",
+    Mobile: "+1 (829) 791 7414",
+  },
+  Random: {
+    "Favorite Character": "Kirby",
+  },
+};
+
+// Keep the ascii-art.txt around 47 lines and 80 characters wide for best results.
+async function writeStatsSvgs(data: CardData): Promise<void> {
+  const asciiPath = path.join(process.cwd(), "assets", "ascii-art.txt");
+  const asciiRaw = await readFile(asciiPath, "utf8");
+  const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
+
+  const assetsDir = path.join(process.cwd(), "assets");
+  const darkSvg = createStatsSvg("dark", asciiLines, data);
+  const lightSvg = createStatsSvg("light", asciiLines, data);
+
+  await writeFile(path.join(assetsDir, "dark_mode.svg"), darkSvg, "utf8");
+  await writeFile(path.join(assetsDir, "light_mode.svg"), lightSvg, "utf8");
 }
 
 function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
