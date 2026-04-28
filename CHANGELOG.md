@@ -1,3 +1,10 @@
+## [1.9.10](https://github.com/Johannsis/Johannsis/compare/v1.9.9...v1.9.10) (2026-04-28)
+
+
+### Bug Fixes
+
+* Replace cardRightX with propertyValueX ([cbe71cf](https://github.com/Johannsis/Johannsis/commit/cbe71cfcf7022149e9a44ebe04b4b47d1118be2e))
+
 ## [1.9.9](https://github.com/Johannsis/Johannsis/compare/v1.9.8...v1.9.9) (2026-04-28)
 
 
