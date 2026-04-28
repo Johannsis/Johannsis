@@ -1,3 +1,10 @@
+## [1.9.5](https://github.com/Johannsis/Johannsis/compare/v1.9.4...v1.9.5) (2026-04-28)
+
+
+### Bug Fixes
+
+* Refactor SVG row rendering with aligned helper ([f4b29b3](https://github.com/Johannsis/Johannsis/commit/f4b29b319b12790517df35c83beb1e8b1f3a33a7))
+
 ## [1.9.4](https://github.com/Johannsis/Johannsis/compare/v1.9.3...v1.9.4) (2026-04-28)
 
 
