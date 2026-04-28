@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+// Setup your birthday
 const BIRTH_YEAR = 1996;
 const BIRTH_MONTH = 8;
 const BIRTH_DAY = 15;
@@ -37,7 +38,9 @@ function getAgeLabel(today: Date = new Date()): string {
   const isBirthday =
     today.getMonth() === BIRTH_MONTH_INDEX && today.getDate() === BIRTH_DAY;
 
-  return `${age}${isBirthday ? "🎂" : ""}`;
+  const ageLabel = `${age}${isBirthday ? "🎂" : ""}`.toString();
+
+  return ageLabel;
 }
 
 // Keep this to about 10 properties or less so the SVG layout does not hide text or overflow.
@@ -51,10 +54,12 @@ const profileProperties: ProfilePropertyGroup = {
   Hobbies: "Gaming, Extreme Sports",
   Contact: {
     Email: "johanneshoersch@gmail.com",
-    Mobile: "+1 (829) 791 7414",
+    Mobile: "+1 (829) 791-7414",
   },
   Random: {
     "Favorite Character": "Kirby",
+    IGN: "Johannsis",
+    Pet: "Cat",
   },
 };
 
@@ -258,12 +263,22 @@ function escapeXml(text: string): string {
     .replaceAll("'", "&apos;");
 }
 
+const ROW_PREFIX = "· ";
+const ROW_GAP_PADDING = 2;
+
 function buildDotGap(
   label: string,
   value: string,
   totalCharacters: number,
 ): string {
-  const dots = Math.max(4, totalCharacters - label.length - value.length);
+  const dots = Math.max(
+    4,
+    totalCharacters -
+      ROW_PREFIX.length -
+      label.length -
+      value.length -
+      ROW_GAP_PADDING,
+  );
   return ".".repeat(dots);
 }
 
@@ -328,7 +343,7 @@ function buildAlignedRow({
 }): string {
   const dotGap = buildDotGap(label, value, totalCharacters);
 
-  return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${fontSize}"><tspan fill="${muted}">· </tspan><tspan fill="${labelColor}">${escapeXml(label)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${valueX}" text-anchor="end" fill="${valueColor}">${escapeXml(value)}</tspan></text>`;
+  return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${fontSize}"><tspan fill="${muted}">${ROW_PREFIX}</tspan><tspan fill="${labelColor}">${escapeXml(label)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${valueX}" text-anchor="end" fill="${valueColor}">${escapeXml(value)}</tspan></text>`;
 }
 
 function buildSectionHeader({
