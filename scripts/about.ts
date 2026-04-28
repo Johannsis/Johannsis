@@ -38,7 +38,7 @@ function getAgeLabel(today: Date = new Date()): string {
   const isBirthday =
     today.getMonth() === BIRTH_MONTH_INDEX && today.getDate() === BIRTH_DAY;
 
-  const ageLabel = `${age}${isBirthday ? "🎂" : ""}`.toString();
+  const ageLabel = `${age}${isBirthday ? "🎂" : ""}`;
 
   return ageLabel;
 }
