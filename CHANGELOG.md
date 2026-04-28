@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Johannsis/Johannsis/compare/v1.9.11...v1.10.0) (2026-04-28)
+
+
+### Features
+
+* test recursive ([36324f5](https://github.com/Johannsis/Johannsis/commit/36324f5ecfadd902db09ad8b5455cad8f0280d94))
+
 ## [1.9.11](https://github.com/Johannsis/Johannsis/compare/v1.9.10...v1.9.11) (2026-04-28)
 
 
