@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/Johannsis/Johannsis/compare/v1.10.3...v1.10.4) (2026-04-28)
+
+
+### Bug Fixes
+
+* Increase property limit and remove Laptop ([ee294f3](https://github.com/Johannsis/Johannsis/commit/ee294f39f5215946d2cd6514b33f7b47ebb52165))
+
 ## [1.10.3](https://github.com/Johannsis/Johannsis/compare/v1.10.2...v1.10.3) (2026-04-28)
 
 
