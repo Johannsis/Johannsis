@@ -43,7 +43,7 @@ function getAgeLabel(today: Date = new Date()): string {
   return ageLabel;
 }
 
-// Keep this to about 13 properties or less so the SVG layout does not hide text or overflow.
+// Keep this to about 14 properties (including object properties names) or less so the SVG layout does not hide text or overflow.
 // biome-ignore assist/source/useSortedKeys: Do not sort these, they are in a deliberate order for display purposes.
 const profileProperties: ProfilePropertyGroup = {
   Name: "Johannes Hoersch",
@@ -55,7 +55,6 @@ const profileProperties: ProfilePropertyGroup = {
   },
   System: {
     IDE: "Zed, VSCode",
-    Laptop: "MacBook Pro",
     OS: "macOS, iOS",
   },
   Random: {
