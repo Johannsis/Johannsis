@@ -1,3 +1,10 @@
+## [1.9.7](https://github.com/Johannsis/Johannsis/compare/v1.9.6...v1.9.7) (2026-04-28)
+
+
+### Bug Fixes
+
+* Add header-bar helper and update profile fields ([62552cd](https://github.com/Johannsis/Johannsis/commit/62552cd83f82313007cf29c065eb50aba53e8316))
+
 ## [1.9.6](https://github.com/Johannsis/Johannsis/compare/v1.9.5...v1.9.6) (2026-04-28)
 
 
