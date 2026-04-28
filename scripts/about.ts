@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
@@ -74,7 +74,9 @@ function dailyReadme(birthday: Date): string {
 async function githubGet<T>(url: string): Promise<T> {
   const res = await fetch(url, { headers });
   if (!res.ok) {
-    throw new Error(`GitHub REST request failed (${res.status}) for ${url}: ${await res.text()}`);
+    throw new Error(
+      `GitHub REST request failed (${res.status}) for ${url}: ${await res.text()}`,
+    );
   }
   return (await res.json()) as T;
 }
@@ -101,7 +103,9 @@ async function githubGetAllPages<T>(initialUrl: string): Promise<T[]> {
   while (url) {
     const res = await fetch(url, { headers });
     if (!res.ok) {
-      throw new Error(`GitHub REST request failed (${res.status}) for ${url}: ${await res.text()}`);
+      throw new Error(
+        `GitHub REST request failed (${res.status}) for ${url}: ${await res.text()}`,
+      );
     }
 
     const page = (await res.json()) as T[];
@@ -157,13 +161,18 @@ async function getCommitCountForRepo(repo: Repo): Promise<number> {
     return firstPage.length;
   }
 
-  const lastMatch = (res.headers.get("link") ?? "").match(/<([^>]+)>;\s*rel="last"/);
+  const lastMatch = (res.headers.get("link") ?? "").match(
+    /<([^>]+)>;\s*rel="last"/,
+  );
   if (!lastMatch) {
     return firstPage.length;
   }
 
   const lastUrl = new URL(lastMatch[1]);
-  const pageParam = Number.parseInt(lastUrl.searchParams.get("page") ?? "1", 10);
+  const pageParam = Number.parseInt(
+    lastUrl.searchParams.get("page") ?? "1",
+    10,
+  );
   if (!Number.isFinite(pageParam) || pageParam <= 1) {
     return firstPage.length;
   }
@@ -178,7 +187,9 @@ async function getCommitCountForRepo(repo: Repo): Promise<number> {
   return (pageParam - 1) * 100 + lastPage.length;
 }
 
-async function getLocForRepo(repo: Repo): Promise<{ add: number; del: number }> {
+async function getLocForRepo(
+  repo: Repo,
+): Promise<{ add: number; del: number }> {
   const endpoint = `${API_BASE}/repos/${repo.full_name}/stats/contributors`;
 
   for (let attempt = 0; attempt < 8; attempt += 1) {
@@ -191,7 +202,9 @@ async function getLocForRepo(repo: Repo): Promise<{ add: number; del: number }> 
       return { add: 0, del: 0 };
     }
     if (!res.ok) {
-      throw new Error(`Failed contributor stats (${res.status}) for ${repo.full_name}: ${await res.text()}`);
+      throw new Error(
+        `Failed contributor stats (${res.status}) for ${repo.full_name}: ${await res.text()}`,
+      );
     }
 
     const rows = (await res.json()) as Array<{
@@ -250,63 +263,56 @@ function buildStatRows(data: CardData): Array<[string, string]> {
   ];
 }
 
-function createStatsSvg(theme: "dark" | "light", asciiLines: string[], data: CardData): string {
+function dottedLabel(label: string, total = 30): string {
+  return `${label} ${".".repeat(Math.max(4, total - label.length))}`;
+}
+
+function createStatsSvg(theme: "dark" | "light", data: CardData): string {
   const isDark = theme === "dark";
   const bg = isDark ? "#0d1117" : "#ffffff";
   const border = isDark ? "#30363d" : "#d0d7de";
-  const title = isDark ? "#79c0ff" : "#0969da";
   const text = isDark ? "#c9d1d9" : "#1f2328";
   const muted = isDark ? "#8b949e" : "#57606a";
+  const accent = "#ffae57";
+  const value = "#79c0ff";
+  const green = "#3fb950";
+  const red = "#f85149";
 
-  const lineHeight = 16;
-  const asciiWidth = 600;
-  const cardPadding = 24;
-  const tableX = asciiWidth + cardPadding * 2;
-  const tableY = 64;
+  const topBar = "─".repeat(56);
+  const osName = process.platform === "darwin" ? "macOS" : process.platform;
   const rows = buildStatRows(data);
-  const tableLineHeight = 34;
-  const maxLabelLen = Math.max(...rows.map(([label]) => label.length));
+  const lineGap = 46;
+  const firstY = 78;
 
-  const asciiTspans = asciiLines
-    .map(
-      (line, index) =>
-        `<tspan x="${cardPadding}" y="${tableY + index * lineHeight}">${escapeXml(line)}</tspan>`,
-    )
-    .join("\n      ");
-
-  const rowText = rows
-    .map(([label, value], index) => {
-      const dotCount = Math.max(2, maxLabelLen - label.length + 4);
-      const dots = ".".repeat(dotCount);
-      const y = tableY + 24 + index * tableLineHeight;
-      return `
-      <text x="${tableX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="${muted}">${escapeXml(label)} ${dots}</text>
-      <text x="1230" y="${y}" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="${text}">${escapeXml(value)}</text>`;
+  const statText = rows
+    .map(([label, currentValue], index) => {
+      const y = firstY + (index + 11) * lineGap;
+      return `<text x="44" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(`${label}:`)}</tspan><tspan fill="${muted}"> ${escapeXml(dottedLabel("", 24 - label.length))} </tspan><tspan fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
     })
-    .join("\n");
+    .join("\n  ");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="820" viewBox="0 0 1250 820" role="img" aria-label="GitHub profile stats card">
-  <rect x="10" y="10" width="1230" height="800" rx="16" fill="${bg}" stroke="${border}" />
-  <line x1="640" y1="36" x2="640" y2="784" stroke="${border}" />
-  <text x="24" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700" fill="${title}">ASCII Portrait</text>
-  <text x="${tableX}" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700" fill="${title}">GitHub Metrics</text>
-  <text x="24" y="64" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="${text}">
-      ${asciiTspans}
-  </text>
-  ${rowText}
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1060" viewBox="0 0 1280 1060" role="img" aria-label="GitHub profile stats card">
+  <rect x="8" y="8" width="1264" height="1044" rx="12" fill="${bg}" stroke="${border}" />
+  <text x="44" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
+  <text x="44" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">OS:</tspan><tspan fill="${muted}"> ${dottedLabel("", 26)} </tspan><tspan fill="${value}">${escapeXml(osName)}</tspan></text>
+  <text x="44" y="170" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Uptime:</tspan><tspan fill="${muted}"> ${dottedLabel("", 22)} </tspan><tspan fill="${value}">${escapeXml(data.age)}</tspan></text>
+  <text x="44" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Host:</tspan><tspan fill="${muted}"> ${dottedLabel("", 24)} </tspan><tspan fill="${value}">GitHub Profile README</tspan></text>
+  <text x="44" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">API:</tspan><tspan fill="${muted}"> ${dottedLabel("", 25)} </tspan><tspan fill="${value}">GitHub REST API</tspan></text>
+  <text x="44" y="334" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
+  <text x="44" y="380" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {Contributed: </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
+  <text x="44" y="426" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
+  <text x="44" y="472" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
+  <text x="44" y="548" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— Detail Table ${topBar}</tspan></text>
+  ${statText}
 </svg>
 `;
 }
 
 async function writeStatsSvgs(data: CardData): Promise<void> {
-  const asciiPath = path.join(process.cwd(), "assets", "asci_image.txt");
-  const asciiRaw = await readFile(asciiPath, "utf8");
-  const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
-
   const scriptsDir = path.join(process.cwd(), "scripts");
-  const darkSvg = createStatsSvg("dark", asciiLines, data);
-  const lightSvg = createStatsSvg("light", asciiLines, data);
+  const darkSvg = createStatsSvg("dark", data);
+  const lightSvg = createStatsSvg("light", data);
 
   await writeFile(path.join(scriptsDir, "dark_mode.svg"), darkSvg, "utf8");
   await writeFile(path.join(scriptsDir, "light_mode.svg"), lightSvg, "utf8");
@@ -320,9 +326,14 @@ async function main(): Promise<void> {
 
   const ownedRepos = await getOwnedRepos();
   const repoData = ownedRepos.length;
-  const starData = ownedRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+  const starData = ownedRepos.reduce(
+    (sum, repo) => sum + repo.stargazers_count,
+    0,
+  );
 
-  const commitCounts = await Promise.all(ownedRepos.map((repo) => getCommitCountForRepo(repo)));
+  const commitCounts = await Promise.all(
+    ownedRepos.map((repo) => getCommitCountForRepo(repo)),
+  );
   const commitData = commitCounts.reduce((sum, n) => sum + n, 0);
 
   const locParts = await Promise.all(

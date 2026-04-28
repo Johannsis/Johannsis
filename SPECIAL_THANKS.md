@@ -127,28 +127,7 @@ Example (Markdown):
 [![X Icon](https://go-skill-icons.vercel.app/api/icons?i=x)](https://x.com/HoerschJoh4010)
 ```
 
-## 7) coolreadme.xyz
-
-![About Me](https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.96&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain)
-
-Source domain: [https://coolreadme.xyz](https://coolreadme.xyz)
-
-Example (HTML `img`):
-
-```html
-<img
-  src="https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.96&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain"
-  alt="About Me"
-/>
-```
-
-Example (Markdown):
-
-```md
-![About Me](https://coolreadme.xyz/api/docs-card?pkg=software-engineer&version=15.8.96&desc=%20I%20value%20low-cost%2C%20functional%2C%20clean%2C%20fast%20and%20reliable%20software&install=Frontend-Focused%20Developer&theme=langchain)
-```
-
-## 8) github-readme-stats.vercel.app
+## 7) github-readme-stats.vercel.app
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&include_all_commits=true)
 
@@ -170,7 +149,7 @@ Example (Markdown):
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Johannsis&show_icons=true&theme=vue-dark&hide_border=true&count_private=true&include_all_commits=true)
 ```
 
-## 9) streak-stats.demolab.com
+## 8) streak-stats.demolab.com
 
 ![GitHub Streak](https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true)
 
@@ -192,7 +171,7 @@ Example (Markdown):
 ![GitHub Streak](https://streak-stats.demolab.com/?user=Johannsis&theme=vue-dark&hide_border=true&count_private=true&show_icons=true&include_all_commits=true)
 ```
 
-## 10) github-profile-summary-cards.vercel.app
+## 9) github-profile-summary-cards.vercel.app
 
 ![Summary Graph](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark)
 
@@ -214,7 +193,7 @@ Example (Markdown):
 ![Summary Graph](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Johannsis&theme=github_dark)
 ```
 
-## 11) quotes-github-readme.vercel.app
+## 10) quotes-github-readme.vercel.app
 
 ![Random Developer Quote](https://quotes-github-readme.vercel.app/api?type=vertical&theme=dark)
 
@@ -236,7 +215,7 @@ Example (Markdown):
 ![Random Developer Quote](https://quotes-github-readme.vercel.app/api?type=vertical&theme=dark)
 ```
 
-## 12) Snake Contributions Generator
+## 11) Snake Contributions Generator
 
 ![Snake Contributions](https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg)
 
@@ -261,7 +240,7 @@ Example (Markdown):
 ![Snake Contributions](https://raw.githubusercontent.com/Johannsis/Johannsis/output/github-contribution-grid-snake-dark.svg)
 ```
 
-## 13) Update README with GitHub Activity
+## 12) Update README with GitHub Activity
 
 <!--START_SECTION:activity-->
 
