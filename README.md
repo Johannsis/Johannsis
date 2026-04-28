@@ -27,6 +27,7 @@
 [![License Badge](https://img.shields.io/github/license/Johannsis/Johannsis?style=flatlogo=github)](https://github.com/Johannsis/Johannsis/blob/main/LICENSE)
 [![Johannsis's Website Badge](https://img.shields.io/website?url=https%3A%2F%2Fjohannsis.github.io%2Fportfolio)](https://johannsis.github.io/portfolio)
 
+[![Update README about](https://github.com/Johannsis/Johannsis/actions/workflows/update-about.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-about.yml)
 [![Update README with Github Activity Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/update-readme-with-github-activity.yml)
 [![Release to changelog and tags Action Status](https://github.com/Johannsis/Johannsis/actions/workflows/automatic-release.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/automatic-release.yml)
 [![Generate Snake Animation with Contributions Graph](https://github.com/Johannsis/Johannsis/actions/workflows/snake-grid-contributions-generator.yml/badge.svg)](https://github.com/Johannsis/Johannsis/actions/workflows/snake-grid-contributions-generator.yml)

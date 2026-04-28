@@ -198,6 +198,15 @@ function dottedLabel(label: string, total = 30): string {
   return `${label} ${".".repeat(Math.max(4, total - label.length))}`;
 }
 
+function buildDotGap(
+  label: string,
+  value: string,
+  totalCharacters: number,
+): string {
+  const dots = Math.max(4, totalCharacters - label.length - value.length);
+  return ".".repeat(dots);
+}
+
 function buildAsciiTspans(
   asciiLines: string[],
   x: number,
@@ -235,6 +244,13 @@ function createStatsSvg(
   const asciiBlockX = 28;
   const asciiBlockTopY = 60;
   const asciiBlockBottomY = 1044;
+  const dividerX = 710;
+  const rightColumnX = 740;
+  const propertyValueX = 1520;
+  const propertyDotWidth = 44;
+  const statsSeparatorX = 1170;
+  const statsMidLabelX = 1200;
+  const statsMidValueX = 1520;
   const asciiTspans = buildAsciiTspans(
     asciiLines,
     asciiBlockX,
@@ -245,20 +261,22 @@ function createStatsSvg(
   const propertyText = propertyRows
     .map(([label, currentValue], index) => {
       const y = 102 + index * 42;
-      return `<text x="640" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(`${label}:`)}</tspan><tspan fill="${muted}"> ${escapeXml(dottedLabel("", 24 - label.length))} </tspan><tspan fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
+      const propertyLabel = `${label}:`;
+      const dotGap = buildDotGap(propertyLabel, currentValue, propertyDotWidth);
+      return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(propertyLabel)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${propertyValueX}" text-anchor="end" fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
     })
     .join("\n  ");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1080" viewBox="0 0 1580 1080" role="img" aria-label="GitHub profile stats card">
   <rect x="8" y="8" width="1564" height="1064" rx="12" fill="${bg}" stroke="${border}" />
-  <line x1="610" y1="22" x2="610" y2="1058" stroke="${border}" />
-  <text x="640" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
+  <line x1="${dividerX}" y1="22" x2="${dividerX}" y2="1058" stroke="${border}" />
+  <text x="${rightColumnX}" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
   ${propertyText}
-  <text x="640" y="860" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
-  <text x="640" y="902" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {</tspan><tspan fill="${accent}">Contributed:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
-  <text x="640" y="944" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
-  <text x="640" y="986" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
+  <text x="${rightColumnX}" y="860" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
+  <text x="${rightColumnX}" y="902" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {</tspan><tspan fill="${accent}">Contributed:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">}</tspan><tspan x="${statsSeparatorX}" fill="${muted}">|</tspan><tspan x="${statsMidLabelX}" fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan x="${statsMidValueX}" text-anchor="end" fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
+  <text x="${rightColumnX}" y="944" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ............ </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan x="${statsSeparatorX}" fill="${muted}">|</tspan><tspan x="${statsMidLabelX}" fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan x="${statsMidValueX}" text-anchor="end" fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
+  <text x="${rightColumnX}" y="986" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
   <text x="28" y="96" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="${text}">
       ${asciiTspans}
   </text>
