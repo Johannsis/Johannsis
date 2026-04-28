@@ -239,7 +239,7 @@ function createStatsSvg(
   const green = "#3fb950";
   const red = "#f85149";
 
-  const topBar = "─".repeat(42);
+  const topBar = "─".repeat(26);
   const propertyRows = Object.entries(profileProperties);
   const asciiBlockX = 28;
   const asciiBlockTopY = 60;
@@ -248,8 +248,8 @@ function createStatsSvg(
   const rightColumnX = 740;
   const propertyValueX = 1520;
   const propertyDotWidth = 44;
-  const statsSeparatorX = 1170;
-  const statsMidLabelX = 1200;
+  const statsSeparatorX = 1240;
+  const statsMidLabelX = 1270;
   const statsMidValueX = 1520;
   const asciiTspans = buildAsciiTspans(
     asciiLines,
