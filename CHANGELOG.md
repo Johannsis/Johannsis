@@ -1,3 +1,10 @@
+## [1.10.5](https://github.com/Johannsis/Johannsis/compare/v1.10.4...v1.10.5) (2026-04-28)
+
+
+### Bug Fixes
+
+* Remove redundant toString() on ageLabel ([cb8c286](https://github.com/Johannsis/Johannsis/commit/cb8c28690f1a54a9632518b5ecbeef1166777651))
+
 ## [1.10.4](https://github.com/Johannsis/Johannsis/compare/v1.10.3...v1.10.4) (2026-04-28)
 
 
