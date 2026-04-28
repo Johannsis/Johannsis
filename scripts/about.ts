@@ -1,15 +1,26 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+const BIRTH_YEAR = 1996;
+const BIRTH_MONTH = 8;
+const BIRTH_DAY = 15;
+
 // Keep this to about 10 properties or less so the SVG layout does not hide text or overflow.
 // biome-ignore assist/source/useSortedKeys: Do not sort these, they are in a deliberate order for display purposes.
-const profileProperties: Record<string, string> = {
+const profileProperties: ProfilePropertyGroup = {
   Name: "Johannes Hoersch",
-  Age: `${new Date().getFullYear() - 1996}`,
+  Age: getAgeLabel(),
   Languages: "English, Spanish, Italian",
   IDE: "Zed, VSCode",
-  OS: "Windows, Linux, macOS",
+  OS: "Windows, macOS",
   Hobbies: "Gaming, Extreme Sports",
+  Contact: {
+    Email: "johanneshoersch@gmail.com",
+    Mobile: "+1 (829) 791 7414",
+  },
+  Random: {
+    "Favorite Character": "Kirby",
+  },
 };
 
 // Keep the ascii-art.txt around 47 lines and 80 characters wide for best results.
@@ -24,6 +35,41 @@ async function writeStatsSvgs(data: CardData): Promise<void> {
 
   await writeFile(path.join(assetsDir, "dark_mode.svg"), darkSvg, "utf8");
   await writeFile(path.join(assetsDir, "light_mode.svg"), lightSvg, "utf8");
+}
+
+type ProfilePropertyValue = string | ProfilePropertyGroup;
+
+type ProfilePropertyGroup = {
+  [key: string]: ProfilePropertyValue;
+};
+
+type ProfilePropertyRow =
+  | {
+      kind: "item";
+      label: string;
+      value: string;
+    }
+  | {
+      kind: "section";
+      label: string;
+    };
+
+const BIRTH_MONTH_INDEX = BIRTH_MONTH - 1;
+
+function getAgeLabel(today: Date = new Date()): string {
+  let age = today.getFullYear() - BIRTH_YEAR;
+  const hasHadBirthdayThisYear =
+    today.getMonth() > BIRTH_MONTH_INDEX ||
+    (today.getMonth() === BIRTH_MONTH_INDEX && today.getDate() >= BIRTH_DAY);
+
+  if (!hasHadBirthdayThisYear) {
+    age -= 1;
+  }
+
+  const isBirthday =
+    today.getMonth() === BIRTH_MONTH_INDEX && today.getDate() === BIRTH_DAY;
+
+  return `${age}${isBirthday ? "🎂" : ""}`;
 }
 
 function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
@@ -227,9 +273,17 @@ function buildDashGap(
   endX: number,
   fontSize: number,
 ): string {
-  const monospaceCharWidth = fontSize * 0.6;
-  const totalCharacters = Math.floor((endX - startX) / monospaceCharWidth);
+  const totalCharacters = getMonospaceCharacterCapacity(startX, endX, fontSize);
   return "─".repeat(Math.max(4, totalCharacters - label.length));
+}
+
+function getMonospaceCharacterCapacity(
+  startX: number,
+  endX: number,
+  fontSize: number,
+): number {
+  const monospaceCharWidth = fontSize * 0.6;
+  return Math.floor((endX - startX) / monospaceCharWidth);
 }
 
 function buildAsciiTspans(
@@ -250,31 +304,72 @@ function buildAsciiTspans(
 }
 
 function buildAlignedRow({
-  dotWidth,
   fontSize,
   label,
   labelColor,
   muted,
   rightColumnX,
+  totalCharacters,
   value,
   valueColor,
   valueX,
   y,
 }: {
-  dotWidth: number;
   fontSize: number;
   label: string;
   labelColor: string;
   muted: string;
   rightColumnX: number;
+  totalCharacters: number;
   value: string;
   valueColor: string;
   valueX: number;
   y: number;
 }): string {
-  const dotGap = buildDotGap(label, value, dotWidth);
+  const dotGap = buildDotGap(label, value, totalCharacters);
 
   return `<text x="${rightColumnX}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${fontSize}"><tspan fill="${muted}">· </tspan><tspan fill="${labelColor}">${escapeXml(label)}</tspan><tspan fill="${muted}"> ${dotGap} </tspan><tspan x="${valueX}" text-anchor="end" fill="${valueColor}">${escapeXml(value)}</tspan></text>`;
+}
+
+function buildSectionHeader({
+  endX,
+  fontSize,
+  label,
+  muted,
+  text,
+  x,
+  y,
+}: {
+  endX: number;
+  fontSize: number;
+  label: string;
+  muted: string;
+  text: string;
+  x: number;
+  y: number;
+}): string {
+  const sectionLabel = `— ${label}`;
+  const dashGap = buildDashGap(sectionLabel, x, endX, fontSize);
+
+  return `<text x="${x}" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${fontSize}"><tspan fill="${text}">${escapeXml(sectionLabel)}</tspan><tspan fill="${muted}"> ${dashGap}</tspan></text>`;
+}
+
+function buildProfilePropertyRows(
+  properties: ProfilePropertyGroup,
+): ProfilePropertyRow[] {
+  const rows: ProfilePropertyRow[] = [];
+
+  for (const [label, value] of Object.entries(properties)) {
+    if (typeof value === "string") {
+      rows.push({ kind: "item", label: `${label}:`, value });
+      continue;
+    }
+
+    rows.push({ kind: "section", label });
+    rows.push(...buildProfilePropertyRows(value));
+  }
+
+  return rows;
 }
 
 function createStatsSvg(
@@ -292,7 +387,7 @@ function createStatsSvg(
   const green = "#3fb950";
   const red = "#f85149";
 
-  const propertyRows = Object.entries(profileProperties);
+  const propertyRows = buildProfilePropertyRows(profileProperties);
   const asciiBlockX = 28;
   const asciiBlockTopY = 60;
   const asciiBlockBottomY = 1044;
@@ -300,11 +395,19 @@ function createStatsSvg(
   const rightColumnX = 740;
   const propertyValueX = 1520;
   const statsDetailX = 768;
-  const propertyDotWidth = 44;
-  const statsDotWidth = 44;
   const headerFontSize = 26;
-  const githubStatsHeaderY = 734;
-  const githubStatsStartY = 776;
+  const rowFontSize = 26;
+  const totalRowCharacters = getMonospaceCharacterCapacity(
+    rightColumnX,
+    propertyValueX,
+    rowFontSize,
+  );
+  const propertyLineGap = 42;
+  const propertyStartY = 102;
+  const propertyEndY =
+    propertyStartY + (propertyRows.length - 1) * propertyLineGap;
+  const githubStatsHeaderY = Math.max(734, propertyEndY + propertyLineGap * 2);
+  const githubStatsStartY = githubStatsHeaderY + propertyLineGap;
   const githubStatsLineGap = 42;
   const asciiTspans = buildAsciiTspans(
     asciiLines,
@@ -314,16 +417,29 @@ function createStatsSvg(
   );
 
   const propertyText = propertyRows
-    .map(([label, currentValue], index) => {
-      const y = 102 + index * 42;
+    .map((row, index) => {
+      const y = propertyStartY + index * propertyLineGap;
+
+      if (row.kind === "section") {
+        return buildSectionHeader({
+          endX: propertyValueX,
+          fontSize: rowFontSize,
+          label: row.label,
+          muted,
+          text,
+          x: rightColumnX,
+          y,
+        });
+      }
+
       return buildAlignedRow({
-        dotWidth: propertyDotWidth,
-        fontSize: 26,
-        label: `${label}:`,
+        fontSize: rowFontSize,
+        label: row.label,
         labelColor: accent,
         muted,
         rightColumnX,
-        value: currentValue,
+        totalCharacters: totalRowCharacters,
+        value: row.value,
         valueColor: value,
         valueX: propertyValueX,
         y,
@@ -347,12 +463,12 @@ function createStatsSvg(
         const breakdownY = y + githubStatsLineGap;
 
         return `${buildAlignedRow({
-          dotWidth: statsDotWidth,
-          fontSize: 26,
+          fontSize: rowFontSize,
           label,
           labelColor: accent,
           muted,
           rightColumnX,
+          totalCharacters: totalRowCharacters,
           value: currentValue,
           valueColor: value,
           valueX: propertyValueX,
@@ -362,12 +478,12 @@ function createStatsSvg(
       }
 
       return buildAlignedRow({
-        dotWidth: statsDotWidth,
-        fontSize: 26,
+        fontSize: rowFontSize,
         label,
         labelColor: accent,
         muted,
         rightColumnX,
+        totalCharacters: totalRowCharacters,
         value: currentValue,
         valueColor: value,
         valueX: propertyValueX,
