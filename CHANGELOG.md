@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/Johannsis/Johannsis/compare/v1.9.1...v1.9.2) (2026-04-28)
+
+
+### Bug Fixes
+
+* Refactor profile stats SVG layout and README images ([d3948ce](https://github.com/Johannsis/Johannsis/commit/d3948cead386263fe5858c7f42d73280cbcbd665))
+
 ## [1.9.1](https://github.com/Johannsis/Johannsis/compare/v1.9.0...v1.9.1) (2026-04-28)
 
 
