@@ -309,7 +309,7 @@ function createStatsSvg(
 }
 
 async function writeStatsSvgs(data: CardData): Promise<void> {
-  const asciiPath = path.join(process.cwd(), "assets", "ascii_art.txt");
+  const asciiPath = path.join(process.cwd(), "assets", "ascii-art.txt");
   const asciiRaw = await readFile(asciiPath, "utf8");
   const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
 
