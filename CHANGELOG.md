@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/Johannsis/Johannsis/compare/v1.9.2...v1.9.3) (2026-04-28)
+
+
+### Bug Fixes
+
+* Right-align stats SVG and improve spacing ([29c44a7](https://github.com/Johannsis/Johannsis/commit/29c44a7ae4d3d7e0faf859bb1d7721d2a91b8a1d))
+
 ## [1.9.2](https://github.com/Johannsis/Johannsis/compare/v1.9.1...v1.9.2) (2026-04-28)
 
 
