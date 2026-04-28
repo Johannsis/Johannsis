@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Johannsis/Johannsis/compare/v1.8.0...v1.9.0) (2026-04-28)
+
+
+### Features
+
+* Add GitHub trophies and fix ASCII asset path ([3633930](https://github.com/Johannsis/Johannsis/commit/363393082fdd681356d8a6657a6e1292181c5f05))
+
 # [1.8.0](https://github.com/Johannsis/Johannsis/compare/v1.7.5...v1.8.0) (2026-04-28)
 
 
