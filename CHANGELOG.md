@@ -1,3 +1,10 @@
+## [1.9.8](https://github.com/Johannsis/Johannsis/compare/v1.9.7...v1.9.8) (2026-04-28)
+
+
+### Bug Fixes
+
+* Update scheduled times for workflows ([2f6f08f](https://github.com/Johannsis/Johannsis/commit/2f6f08feaf732dba36cc5e6fbba261f3789a69c6))
+
 ## [1.9.7](https://github.com/Johannsis/Johannsis/compare/v1.9.6...v1.9.7) (2026-04-28)
 
 
