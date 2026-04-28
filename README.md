@@ -235,6 +235,10 @@
 
 </details>
 
+<a href="#">
+  <img src="https://webpets-flame.vercel.app/generated/monkey/gray_run_8fps.gif" alt="Monkey Run" width="100%" height="50" />
+</a>
+
 <details>
   <summary>Click to expand the trophies</summary>
   <br />
@@ -265,3 +269,7 @@ If you want to use the same external README services (typing banners, badges,
 icons, stats cards, and more), check:
 
 [SPECIAL_THANKS.md](https://github.com/Johannsis/Johannsis/blob/main/SPECIAL_THANKS.md)
+
+<a href="#">
+  <img src="https://webpets-flame.vercel.app/generated/rocky/gray_walk_8fps.gif" alt="Rock Walk" width="100%" height="50" />
+</a>

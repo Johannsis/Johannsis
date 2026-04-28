@@ -1,6 +1,13 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+const profileProperties: Record<string, string> = {
+  API: "GitHub REST API",
+  Host: "GitHub Profile README",
+  OS: "macOS",
+  Uptime: "Since 1996",
+};
+
 function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
   const value = process.env[name];
   if (!value) {
@@ -42,45 +49,6 @@ type CommitDetail = {
     deletions: number;
   };
 };
-
-function formatPlural(unit: number): string {
-  return unit === 1 ? "" : "s";
-}
-
-function shiftMonth(date: Date, months: number): Date {
-  const d = new Date(date.getTime());
-  d.setMonth(d.getMonth() + months);
-  return d;
-}
-
-function dailyReadme(birthday: Date): string {
-  const now = new Date();
-  let years = now.getFullYear() - birthday.getFullYear();
-
-  const yearAnchor = new Date(birthday.getTime());
-  yearAnchor.setFullYear(birthday.getFullYear() + years);
-  if (yearAnchor > now) {
-    years -= 1;
-  }
-
-  const afterYears = new Date(birthday.getTime());
-  afterYears.setFullYear(birthday.getFullYear() + years);
-
-  let months =
-    (now.getFullYear() - afterYears.getFullYear()) * 12 +
-    (now.getMonth() - afterYears.getMonth());
-
-  let afterMonths = shiftMonth(afterYears, months);
-  if (afterMonths > now) {
-    months -= 1;
-    afterMonths = shiftMonth(afterYears, months);
-  }
-
-  const dayMs = 24 * 60 * 60 * 1000;
-  const days = Math.floor((now.getTime() - afterMonths.getTime()) / dayMs);
-
-  return `${years} year${formatPlural(years)}, ${months} month${formatPlural(months)}, ${days} day${formatPlural(days)}${months === 0 && days === 0 ? " 🎂" : ""}`;
-}
 
 async function githubGet<T>(url: string): Promise<T> {
   const res = await fetch(url, { headers });
@@ -207,7 +175,6 @@ async function getRepoContributionStats(repo: Repo): Promise<{
 }
 
 type CardData = {
-  age: string;
   commits: number;
   contribRepos: number;
   followers: number;
@@ -227,29 +194,23 @@ function escapeXml(text: string): string {
     .replaceAll("'", "&apos;");
 }
 
-function buildStatRows(data: CardData): Array<[string, string]> {
-  return [
-    ["Age", data.age],
-    ["Commits", data.commits.toLocaleString("en-US")],
-    ["Stars", data.stars.toLocaleString("en-US")],
-    ["Repositories", data.repos.toLocaleString("en-US")],
-    ["Contributed to", data.contribRepos.toLocaleString("en-US")],
-    ["Followers", data.followers.toLocaleString("en-US")],
-    ["Lines of Code", data.locTotal.toLocaleString("en-US")],
-    ["Added lines", data.locAdd.toLocaleString("en-US")],
-    ["Deleted lines", data.locDel.toLocaleString("en-US")],
-  ];
-}
-
 function dottedLabel(label: string, total = 30): string {
   return `${label} ${".".repeat(Math.max(4, total - label.length))}`;
 }
 
-function buildAsciiTspans(asciiLines: string[], x: number, y: number): string {
+function buildAsciiTspans(
+  asciiLines: string[],
+  x: number,
+  topY: number,
+  bottomY: number,
+): string {
+  const lineHeight =
+    asciiLines.length > 1 ? (bottomY - topY) / (asciiLines.length - 1) : 0;
+
   return asciiLines
     .map(
       (line, index) =>
-        `<tspan x="${x}" y="${y + index * 12}">${escapeXml(line)}</tspan>`,
+        `<tspan x="${x}" y="${topY + index * lineHeight}">${escapeXml(line)}</tspan>`,
     )
     .join("\n      ");
 }
@@ -270,17 +231,20 @@ function createStatsSvg(
   const red = "#f85149";
 
   const topBar = "─".repeat(42);
-  const osName = process.platform === "darwin" ? "macOS" : process.platform;
-  const rows = buildStatRows(data);
-  const lineGap = 42;
+  const propertyRows = Object.entries(profileProperties);
   const asciiBlockX = 28;
-  const asciiBlockY = 96;
-  const detailSectionY = 594;
-  const asciiTspans = buildAsciiTspans(asciiLines, asciiBlockX, asciiBlockY);
+  const asciiBlockTopY = 60;
+  const asciiBlockBottomY = 1044;
+  const asciiTspans = buildAsciiTspans(
+    asciiLines,
+    asciiBlockX,
+    asciiBlockTopY,
+    asciiBlockBottomY,
+  );
 
-  const statText = rows
+  const propertyText = propertyRows
     .map(([label, currentValue], index) => {
-      const y = detailSectionY + index * lineGap;
+      const y = 102 + index * 42;
       return `<text x="640" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(`${label}:`)}</tspan><tspan fill="${muted}"> ${escapeXml(dottedLabel("", 24 - label.length))} </tspan><tspan fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
     })
     .join("\n  ");
@@ -289,21 +253,15 @@ function createStatsSvg(
 <svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1080" viewBox="0 0 1580 1080" role="img" aria-label="GitHub profile stats card">
   <rect x="8" y="8" width="1564" height="1064" rx="12" fill="${bg}" stroke="${border}" />
   <line x1="610" y1="22" x2="610" y2="1058" stroke="${border}" />
-  <text x="36" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
-  <text x="640" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">OS:</tspan><tspan fill="${muted}"> ${dottedLabel("", 26)} </tspan><tspan fill="${value}">${escapeXml(osName)}</tspan></text>
-  <text x="640" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Uptime:</tspan><tspan fill="${muted}"> ${dottedLabel("", 22)} </tspan><tspan fill="${value}">${escapeXml(data.age)}</tspan></text>
-  <text x="640" y="180" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Host:</tspan><tspan fill="${muted}"> ${dottedLabel("", 24)} </tspan><tspan fill="${value}">GitHub Profile README</tspan></text>
-  <text x="640" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">API:</tspan><tspan fill="${muted}"> ${dottedLabel("", 25)} </tspan><tspan fill="${value}">GitHub REST API</tspan></text>
-  <text x="640" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
-  <text x="640" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {Contributed: </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
-  <text x="640" y="364" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
-  <text x="640" y="406" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan></text>
-  <text x="668" y="442" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">(</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
-  <text x="640" y="500" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— Detail Table ${topBar}</tspan></text>
+  <text x="640" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
+  ${propertyText}
+  <text x="640" y="860" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
+  <text x="640" y="902" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {</tspan><tspan fill="${accent}">Contributed:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
+  <text x="640" y="944" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
+  <text x="640" y="986" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
   <text x="28" y="96" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="${text}">
       ${asciiTspans}
   </text>
-  ${statText}
 </svg>
 `;
 }
@@ -323,7 +281,6 @@ async function writeStatsSvgs(data: CardData): Promise<void> {
 
 async function main(): Promise<void> {
   const user = await getUser();
-  const ageData = dailyReadme(new Date(1996, 7, 15));
 
   const ownedRepos = await getOwnedRepos();
   const accessibleRepos = await getAccessibleRepos();
@@ -347,7 +304,6 @@ async function main(): Promise<void> {
   const followerData = user.followers;
 
   await writeStatsSvgs({
-    age: ageData,
     commits: commitData,
     contribRepos: contribData,
     followers: followerData,
