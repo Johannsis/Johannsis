@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="820" viewBox="0 0 1250 820" role="img" aria-label="GitHub profile stats card">
+  <rect x="10" y="10" width="1230" height="800" rx="16" fill="#ffffff" stroke="#d0d7de" />
+  <line x1="640" y1="36" x2="640" y2="784" stroke="#d0d7de" />
+  <text x="24" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700" fill="#0969da">ASCII Portrait</text>
+  <text x="648" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700" fill="#0969da">GitHub Metrics</text>
+  <text x="24" y="64" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#1f2328">
+      <tspan x="24" y="64">                                                                               </tspan>
+      <tspan x="24" y="80">                                   .*=:+                                       </tspan>
+      <tspan x="24" y="96">                                *==     #*+@.-+**                              </tspan>
+      <tspan x="24" y="112">                              @   @*=@%@@=.*:%+  :+                            </tspan>
+      <tspan x="24" y="128">                         =+@#-@  #=     @#@@@@%@@@%*=:=-                       </tspan>
+      <tspan x="24" y="144">                  *@  =@@#.:%  =:%@@@@@.    -@ %.@@@@@%.=                      </tspan>
+      <tspan x="24" y="160">                    @+#   .  *=@-     %%  +%   : .     =# +*                   </tspan>
+      <tspan x="24" y="176">                .@.   .%@% -    +:  .%      @.    %%: . :## *-:                </tspan>
+      <tspan x="24" y="192">              =+:@:   :: *%::%%:      @-%# * .-.    .--=  -# -*                </tspan>
+      <tspan x="24" y="208">              %:  *+-        %@%@@%%@@   %%  %*%%+.  :  :. -=%                 </tspan>
+      <tspan x="24" y="224">          #. -   +-%%=:-@%:  :#***###%@#+***=#*##%%%%@#+%-   -                 </tspan>
+      <tspan x="24" y="240">          -++  -  +     #%%@%*********#%%%%###*********##%@   . -              </tspan>
+      <tspan x="24" y="256">               %@@@%*=.:**#**#********************++***###%@: @%               </tspan>
+      <tspan x="24" y="272">         += +@@*-**%%%%%%#******************+***+*******#**%@  -.              </tspan>
+      <tspan x="24" y="288">         +-@*#+###**************************************+***%@  .#             </tspan>
+      <tspan x="24" y="304">         =%+=*#*****************************************+****%%                </tspan>
+      <tspan x="24" y="320">         =::%#***************************************+****+***#*               </tspan>
+      <tspan x="24" y="336">         .**#**********+***+********#%%%%%%%%%%%%%##******+****+=              </tspan>
+      <tspan x="24" y="352">         =#**********###+*******%%%%+==-:==::=*%-*#%*###*###%%%#+              </tspan>
+      <tspan x="24" y="368">         =***********+--=**%@@@@@  %#=.:=-:..     -=**#+++**%%#%@#+            </tspan>
+      <tspan x="24" y="384">         -*********#*+%@@@@@     : -.#+.-++: +*==:.  .*%#+--       +           </tspan>
+      <tspan x="24" y="400">         -****+***+%@@@     #@@@#=*  . *    =.:.:=+=-    @ --.=%%@%*   :+      </tspan>
+      <tspan x="24" y="416">         -***=#%@@@.   @@@@@%+--::.@+-=+%%%%%=:+::+#::-#  *%+ -  -*      @%    </tspan>
+      <tspan x="24" y="432">         -**#%%@   +#-+=:----==--=+.@%: :=:. .:-=-#=* @@@* #%%@%+ #  :*:.%     </tspan>
+      <tspan x="24" y="448">         *@@%.=    :*%%%######%%%%#@ %@@@%****%%##@  -%*#%:#: .:%%       #     </tspan>
+      <tspan x="24" y="464">            :%@@@@%#%#*************%%@   ##%%%@@@@@  %#**#% @%%###*      .     </tspan>
+      <tspan x="24" y="480">         :...  +=*##*****************%%@%%##+.     *%#****#%-.%%%%#    ::      </tspan>
+      <tspan x="24" y="496">         : %@@@#+-#*****#*++*************+++*#%%@%#%####%%##%%*.               </tspan>
+      <tspan x="24" y="512">         - @#*   %#****=*#**************++++++=-:#%%%%%%#**#*%%%%%@            </tspan>
+      <tspan x="24" y="528">         -:%: ...@%##=%=:%***+*+++**+********+-=. :--:   ..-=-%***#            </tspan>
+      <tspan x="24" y="544">          =#%.::. *-#**==#++*+*#*+*******+*+++*#%#. .-+#=+#+ -++***            </tspan>
+      <tspan x="24" y="560">           .=#@%%%%.+%+*%:-%%#*+*****+*+*++**###%%@%+   *.  +%%***+            </tspan>
+      <tspan x="24" y="576">             :*#=--+-#=+%#+* -*#+#**#*****####**--%*@@@%@@@@@=###*=            </tspan>
+      <tspan x="24" y="592">              -=#+%%.=#*%=:##:*==###+#+=+*#%=.=*%#.          =@-%#-            </tspan>
+      <tspan x="24" y="608">               :++.  .%#+%=%.=++- #=+##****: ==    =@@@%+=+*:  -.%-            </tspan>
+      <tspan x="24" y="624">                -**=-:.##=*+=*=*+@+.+:-+%#*:-*%%@@%*=-:+*##%@@@* %=            </tspan>
+      <tspan x="24" y="640">                 =%*+--:%#+-*=+:= :-.:.*=+*+*#+=====:-.    .=+*#*%.            </tspan>
+      <tspan x="24" y="656">                  +#*===-**+*:%:-::*-*+-+ --=++++=++***#*##**##=+*             </tspan>
+      <tspan x="24" y="672">                  *##*+===:.-. .-. . . :*.:==%#*%%######%%#%#*%-:-             </tspan>
+      <tspan x="24" y="688">                   *#+++++*  ..:...:#--:   ...#%%%%%%%#*+++#%%%%.              </tspan>
+      <tspan x="24" y="704">                   +#*+++++*+     .  .   :- . :.=..=:**%**+%##%#               </tspan>
+      <tspan x="24" y="720">                    ***++++*#%#-+..         ... .. : :== := -+ .               </tspan>
+      <tspan x="24" y="736">                    +**+++==+=:-==-=*-:        .   :.  ..+.                    </tspan>
+      <tspan x="24" y="752">                    -#*++*=+++-=-+--=-=++**-                                   </tspan>
+      <tspan x="24" y="768">                    :#**=+==+=+---::.:...::-+++*#--:::=##@@                    </tspan>
+      <tspan x="24" y="784">                     #+*+++++=-==*-+*-:-::.:....::=#%*#++*#                    </tspan>
+      <tspan x="24" y="800">                     =:-::....  .:. .              .   .:=*                    </tspan>
+  </text>
+  
+      <text x="648" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Age ...............</text>
+      <text x="1230" y="88" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">23 years, 9 months, 23 days</text>
+
+      <text x="648" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Commits ...........</text>
+      <text x="1230" y="122" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">129</text>
+
+      <text x="648" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Stars .............</text>
+      <text x="1230" y="156" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">1</text>
+
+      <text x="648" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Repositories ......</text>
+      <text x="1230" y="190" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">3</text>
+
+      <text x="648" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Contributed to ....</text>
+      <text x="1230" y="224" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">7</text>
+
+      <text x="648" y="258" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Followers .........</text>
+      <text x="1230" y="258" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">4</text>
+
+      <text x="648" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Lines of Code .....</text>
+      <text x="1230" y="292" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">0</text>
+
+      <text x="648" y="326" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Added lines .......</text>
+      <text x="1230" y="326" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">0</text>
+
+      <text x="648" y="360" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#57606a">Deleted lines .....</text>
+      <text x="1230" y="360" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#1f2328">0</text>
+</svg>
