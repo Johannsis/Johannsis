@@ -32,6 +32,17 @@ type Repo = {
   stargazers_count: number;
 };
 
+type CommitSummary = {
+  sha: string;
+};
+
+type CommitDetail = {
+  stats?: {
+    additions: number;
+    deletions: number;
+  };
+};
+
 function formatPlural(unit: number): string {
   return unit === 1 ? "" : "s";
 }
@@ -131,101 +142,68 @@ async function getOwnedRepos(): Promise<Repo[]> {
   );
 }
 
-async function getContributedReposCount(): Promise<number> {
+async function getAccessibleRepos(): Promise<Repo[]> {
   const repos = await githubGetAllPages<Repo>(
-    `${API_BASE}/user/repos?per_page=100&affiliation=owner,collaborator,organization_member`,
+    `${API_BASE}/user/repos?per_page=100&affiliation=owner,collaborator,organization_member&sort=updated`,
   );
 
-  const unique = new Set<string>();
+  const uniqueRepos = new Map<string, Repo>();
   for (const repo of repos) {
-    unique.add(repo.full_name);
+    uniqueRepos.set(repo.full_name, repo);
   }
-  return unique.size;
+
+  return [...uniqueRepos.values()];
 }
 
-async function getCommitCountForRepo(repo: Repo): Promise<number> {
-  const base = `${API_BASE}/repos/${repo.full_name}/commits?author=${encodeURIComponent(USER_NAME)}&per_page=100`;
-  const res = await fetch(base, { headers });
-  if (res.status === 409) {
-    return 0;
-  }
-  if (!res.ok) {
-    throw new Error(
-      `Failed commit fetch (${res.status}) for ${repo.full_name}: ${await res.text()}`,
-    );
+function chunk<T>(items: T[], size: number): T[][] {
+  const chunks: T[][] = [];
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
   }
 
-  const firstPage = (await res.json()) as unknown[];
-  const next = nextLink(res.headers.get("link"));
-  if (!next) {
-    return firstPage.length;
-  }
-
-  const lastMatch = (res.headers.get("link") ?? "").match(
-    /<([^>]+)>;\s*rel="last"/,
-  );
-  if (!lastMatch) {
-    return firstPage.length;
-  }
-
-  const lastUrl = new URL(lastMatch[1]);
-  const pageParam = Number.parseInt(
-    lastUrl.searchParams.get("page") ?? "1",
-    10,
-  );
-  if (!Number.isFinite(pageParam) || pageParam <= 1) {
-    return firstPage.length;
-  }
-
-  const lastRes = await fetch(lastMatch[1], { headers });
-  if (!lastRes.ok) {
-    throw new Error(
-      `Failed last commit page (${lastRes.status}) for ${repo.full_name}: ${await lastRes.text()}`,
-    );
-  }
-  const lastPage = (await lastRes.json()) as unknown[];
-  return (pageParam - 1) * 100 + lastPage.length;
+  return chunks;
 }
 
-async function getLocForRepo(
-  repo: Repo,
-): Promise<{ add: number; del: number }> {
-  const endpoint = `${API_BASE}/repos/${repo.full_name}/stats/contributors`;
+async function getRepoContributionStats(repo: Repo): Promise<{
+  add: number;
+  commits: number;
+  del: number;
+}> {
+  const commitListUrl = `${API_BASE}/repos/${repo.full_name}/commits?author=${encodeURIComponent(USER_NAME)}&per_page=100`;
 
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    const res = await fetch(endpoint, { headers });
-    if (res.status === 202) {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      continue;
+  let commitSummaries: CommitSummary[];
+  try {
+    commitSummaries = await githubGetAllPages<CommitSummary>(commitListUrl);
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      (error.message.includes("(409)") ||
+        error.message.includes("Git Repository is empty"))
+    ) {
+      return { add: 0, commits: 0, del: 0 };
     }
-    if (res.status === 204 || res.status === 409) {
-      return { add: 0, del: 0 };
-    }
-    if (!res.ok) {
-      throw new Error(
-        `Failed contributor stats (${res.status}) for ${repo.full_name}: ${await res.text()}`,
-      );
-    }
-
-    const rows = (await res.json()) as Array<{
-      author: { login: string } | null;
-      weeks: Array<{ a: number; d: number }>;
-    }>;
-    const mine = rows.find((row) => row.author?.login === USER_NAME);
-    if (!mine) {
-      return { add: 0, del: 0 };
-    }
-
-    let add = 0;
-    let del = 0;
-    for (const week of mine.weeks) {
-      add += week.a;
-      del += week.d;
-    }
-    return { add, del };
+    throw error;
   }
 
-  return { add: 0, del: 0 };
+  let add = 0;
+  let del = 0;
+
+  for (const commitBatch of chunk(commitSummaries, 10)) {
+    const details = await Promise.all(
+      commitBatch.map(({ sha }) =>
+        githubGet<CommitDetail>(
+          `${API_BASE}/repos/${repo.full_name}/commits/${sha}`,
+        ),
+      ),
+    );
+
+    for (const detail of details) {
+      add += detail.stats?.additions ?? 0;
+      del += detail.stats?.deletions ?? 0;
+    }
+  }
+
+  return { add, commits: commitSummaries.length, del };
 }
 
 type CardData = {
@@ -291,36 +269,38 @@ function createStatsSvg(
   const green = "#3fb950";
   const red = "#f85149";
 
-  const topBar = "─".repeat(48);
+  const topBar = "─".repeat(42);
   const osName = process.platform === "darwin" ? "macOS" : process.platform;
   const rows = buildStatRows(data);
-  const lineGap = 46;
+  const lineGap = 42;
   const asciiBlockX = 28;
-  const asciiBlockY = 128;
-  const detailSectionY = 708;
+  const asciiBlockY = 96;
+  const detailSectionY = 594;
   const asciiTspans = buildAsciiTspans(asciiLines, asciiBlockX, asciiBlockY);
 
   const statText = rows
     .map(([label, currentValue], index) => {
       const y = detailSectionY + index * lineGap;
-      return `<text x="692" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(`${label}:`)}</tspan><tspan fill="${muted}"> ${escapeXml(dottedLabel("", 24 - label.length))} </tspan><tspan fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
+      return `<text x="640" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(`${label}:`)}</tspan><tspan fill="${muted}"> ${escapeXml(dottedLabel("", 24 - label.length))} </tspan><tspan fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
     })
     .join("\n  ");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1060" viewBox="0 0 1280 1060" role="img" aria-label="GitHub profile stats card">
-  <rect x="8" y="8" width="1264" height="1044" rx="12" fill="${bg}" stroke="${border}" />
-  <text x="44" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
-  <text x="692" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">OS:</tspan><tspan fill="${muted}"> ${dottedLabel("", 26)} </tspan><tspan fill="${value}">${escapeXml(osName)}</tspan></text>
-  <text x="692" y="170" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Uptime:</tspan><tspan fill="${muted}"> ${dottedLabel("", 22)} </tspan><tspan fill="${value}">${escapeXml(data.age)}</tspan></text>
-  <text x="692" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Host:</tspan><tspan fill="${muted}"> ${dottedLabel("", 24)} </tspan><tspan fill="${value}">GitHub Profile README</tspan></text>
-  <text x="692" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">API:</tspan><tspan fill="${muted}"> ${dottedLabel("", 25)} </tspan><tspan fill="${value}">GitHub REST API</tspan></text>
-  <text x="692" y="334" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
-  <text x="692" y="380" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {Contributed: </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
-  <text x="692" y="426" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
-  <text x="692" y="472" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
-  <text x="692" y="548" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— Detail Table ${topBar}</tspan></text>
-  <text x="28" y="128" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="${text}">
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1080" viewBox="0 0 1580 1080" role="img" aria-label="GitHub profile stats card">
+  <rect x="8" y="8" width="1564" height="1064" rx="12" fill="${bg}" stroke="${border}" />
+  <line x1="610" y1="22" x2="610" y2="1058" stroke="${border}" />
+  <text x="36" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
+  <text x="640" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">OS:</tspan><tspan fill="${muted}"> ${dottedLabel("", 26)} </tspan><tspan fill="${value}">${escapeXml(osName)}</tspan></text>
+  <text x="640" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Uptime:</tspan><tspan fill="${muted}"> ${dottedLabel("", 22)} </tspan><tspan fill="${value}">${escapeXml(data.age)}</tspan></text>
+  <text x="640" y="180" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Host:</tspan><tspan fill="${muted}"> ${dottedLabel("", 24)} </tspan><tspan fill="${value}">GitHub Profile README</tspan></text>
+  <text x="640" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">API:</tspan><tspan fill="${muted}"> ${dottedLabel("", 25)} </tspan><tspan fill="${value}">GitHub REST API</tspan></text>
+  <text x="640" y="280" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
+  <text x="640" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {Contributed: </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
+  <text x="640" y="364" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
+  <text x="640" y="406" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan></text>
+  <text x="668" y="442" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">(</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
+  <text x="640" y="500" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— Detail Table ${topBar}</tspan></text>
+  <text x="28" y="96" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="${text}">
       ${asciiTspans}
   </text>
   ${statText}
@@ -343,30 +323,27 @@ async function writeStatsSvgs(data: CardData): Promise<void> {
 
 async function main(): Promise<void> {
   const user = await getUser();
-  const ageData = dailyReadme(new Date(2002, 6, 5));
+  const ageData = dailyReadme(new Date(1996, 7, 15));
 
   const ownedRepos = await getOwnedRepos();
+  const accessibleRepos = await getAccessibleRepos();
   const repoData = ownedRepos.length;
   const starData = ownedRepos.reduce(
     (sum, repo) => sum + repo.stargazers_count,
     0,
   );
 
-  const commitCounts = await Promise.all(
-    ownedRepos.map((repo) => getCommitCountForRepo(repo)),
-  );
-  const commitData = commitCounts.reduce((sum, n) => sum + n, 0);
-
-  const locParts = await Promise.all(
-    ownedRepos
+  const repoStats = await Promise.all(
+    accessibleRepos
       .filter((repo) => !repo.fork && !repo.archived)
-      .map((repo) => getLocForRepo(repo)),
+      .map((repo) => getRepoContributionStats(repo)),
   );
-  const locAdd = locParts.reduce((sum, part) => sum + part.add, 0);
-  const locDel = locParts.reduce((sum, part) => sum + part.del, 0);
+  const commitData = repoStats.reduce((sum, repo) => sum + repo.commits, 0);
+  const locAdd = repoStats.reduce((sum, repo) => sum + repo.add, 0);
+  const locDel = repoStats.reduce((sum, repo) => sum + repo.del, 0);
   const locTotal = locAdd - locDel;
 
-  const contribData = await getContributedReposCount();
+  const contribData = accessibleRepos.length;
   const followerData = user.followers;
 
   await writeStatsSvgs({
