@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
@@ -267,7 +267,20 @@ function dottedLabel(label: string, total = 30): string {
   return `${label} ${".".repeat(Math.max(4, total - label.length))}`;
 }
 
-function createStatsSvg(theme: "dark" | "light", data: CardData): string {
+function buildAsciiTspans(asciiLines: string[], x: number, y: number): string {
+  return asciiLines
+    .map(
+      (line, index) =>
+        `<tspan x="${x}" y="${y + index * 12}">${escapeXml(line)}</tspan>`,
+    )
+    .join("\n      ");
+}
+
+function createStatsSvg(
+  theme: "dark" | "light",
+  asciiLines: string[],
+  data: CardData,
+): string {
   const isDark = theme === "dark";
   const bg = isDark ? "#0d1117" : "#ffffff";
   const border = isDark ? "#30363d" : "#d0d7de";
@@ -278,16 +291,19 @@ function createStatsSvg(theme: "dark" | "light", data: CardData): string {
   const green = "#3fb950";
   const red = "#f85149";
 
-  const topBar = "─".repeat(56);
+  const topBar = "─".repeat(48);
   const osName = process.platform === "darwin" ? "macOS" : process.platform;
   const rows = buildStatRows(data);
   const lineGap = 46;
-  const firstY = 78;
+  const asciiBlockX = 28;
+  const asciiBlockY = 128;
+  const detailSectionY = 708;
+  const asciiTspans = buildAsciiTspans(asciiLines, asciiBlockX, asciiBlockY);
 
   const statText = rows
     .map(([label, currentValue], index) => {
-      const y = firstY + (index + 11) * lineGap;
-      return `<text x="44" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(`${label}:`)}</tspan><tspan fill="${muted}"> ${escapeXml(dottedLabel("", 24 - label.length))} </tspan><tspan fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
+      const y = detailSectionY + index * lineGap;
+      return `<text x="692" y="${y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">${escapeXml(`${label}:`)}</tspan><tspan fill="${muted}"> ${escapeXml(dottedLabel("", 24 - label.length))} </tspan><tspan fill="${value}">${escapeXml(currentValue)}</tspan></text>`;
     })
     .join("\n  ");
 
@@ -295,32 +311,37 @@ function createStatsSvg(theme: "dark" | "light", data: CardData): string {
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1060" viewBox="0 0 1280 1060" role="img" aria-label="GitHub profile stats card">
   <rect x="8" y="8" width="1264" height="1044" rx="12" fill="${bg}" stroke="${border}" />
   <text x="44" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
-  <text x="44" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">OS:</tspan><tspan fill="${muted}"> ${dottedLabel("", 26)} </tspan><tspan fill="${value}">${escapeXml(osName)}</tspan></text>
-  <text x="44" y="170" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Uptime:</tspan><tspan fill="${muted}"> ${dottedLabel("", 22)} </tspan><tspan fill="${value}">${escapeXml(data.age)}</tspan></text>
-  <text x="44" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Host:</tspan><tspan fill="${muted}"> ${dottedLabel("", 24)} </tspan><tspan fill="${value}">GitHub Profile README</tspan></text>
-  <text x="44" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">API:</tspan><tspan fill="${muted}"> ${dottedLabel("", 25)} </tspan><tspan fill="${value}">GitHub REST API</tspan></text>
-  <text x="44" y="334" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
-  <text x="44" y="380" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {Contributed: </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
-  <text x="44" y="426" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
-  <text x="44" y="472" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
-  <text x="44" y="548" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— Detail Table ${topBar}</tspan></text>
+  <text x="692" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">OS:</tspan><tspan fill="${muted}"> ${dottedLabel("", 26)} </tspan><tspan fill="${value}">${escapeXml(osName)}</tspan></text>
+  <text x="692" y="170" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Uptime:</tspan><tspan fill="${muted}"> ${dottedLabel("", 22)} </tspan><tspan fill="${value}">${escapeXml(data.age)}</tspan></text>
+  <text x="692" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Host:</tspan><tspan fill="${muted}"> ${dottedLabel("", 24)} </tspan><tspan fill="${value}">GitHub Profile README</tspan></text>
+  <text x="692" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">API:</tspan><tspan fill="${muted}"> ${dottedLabel("", 25)} </tspan><tspan fill="${value}">GitHub REST API</tspan></text>
+  <text x="692" y="334" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
+  <text x="692" y="380" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Repos:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.repos.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> {Contributed: </tspan><tspan fill="${value}">${data.contribRepos.toLocaleString("en-US")}</tspan><tspan fill="${muted}">} | </tspan><tspan fill="${accent}">Stars:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.stars.toLocaleString("en-US")}</tspan></text>
+  <text x="692" y="426" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Commits:</tspan><tspan fill="${muted}"> ......... </tspan><tspan fill="${value}">${data.commits.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> | </tspan><tspan fill="${accent}">Followers:</tspan><tspan fill="${muted}"> .... </tspan><tspan fill="${value}">${data.followers.toLocaleString("en-US")}</tspan></text>
+  <text x="692" y="472" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${muted}">· </tspan><tspan fill="${accent}">Lines of Code on GitHub:</tspan><tspan fill="${muted}"> </tspan><tspan fill="${value}">${data.locTotal.toLocaleString("en-US")}</tspan><tspan fill="${muted}"> (</tspan><tspan fill="${green}">${data.locAdd.toLocaleString("en-US")}++</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${data.locDel.toLocaleString("en-US")}--</tspan><tspan fill="${muted}">)</tspan></text>
+  <text x="692" y="548" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="33"><tspan fill="${text}">— Detail Table ${topBar}</tspan></text>
+  <text x="28" y="128" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="${text}">
+      ${asciiTspans}
+  </text>
   ${statText}
 </svg>
 `;
 }
 
 async function writeStatsSvgs(data: CardData): Promise<void> {
-  const scriptsDir = path.join(process.cwd(), "scripts");
-  const darkSvg = createStatsSvg("dark", data);
-  const lightSvg = createStatsSvg("light", data);
+  const asciiPath = path.join(process.cwd(), "assets", "asci_image.txt");
+  const asciiRaw = await readFile(asciiPath, "utf8");
+  const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
 
-  await writeFile(path.join(scriptsDir, "dark_mode.svg"), darkSvg, "utf8");
-  await writeFile(path.join(scriptsDir, "light_mode.svg"), lightSvg, "utf8");
+  const assetsDir = path.join(process.cwd(), "assets");
+  const darkSvg = createStatsSvg("dark", asciiLines, data);
+  const lightSvg = createStatsSvg("light", asciiLines, data);
+
+  await writeFile(path.join(assetsDir, "dark_mode.svg"), darkSvg, "utf8");
+  await writeFile(path.join(assetsDir, "light_mode.svg"), lightSvg, "utf8");
 }
 
 async function main(): Promise<void> {
-  await mkdir(path.join(process.cwd(), "cache"), { recursive: true });
-
   const user = await getUser();
   const ageData = dailyReadme(new Date(2002, 6, 5));
 
@@ -359,23 +380,6 @@ async function main(): Promise<void> {
     repos: repoData,
     stars: starData,
   });
-
-  const output = {
-    age: ageData,
-    commits: commitData,
-    contributorsRepos: contribData,
-    followers: followerData,
-    loc: { add: locAdd, del: locDel, total: locTotal },
-    repos: repoData,
-    stars: starData,
-    userId: user.id,
-  };
-
-  await writeFile(
-    path.join(process.cwd(), "cache", `${USER_NAME.toLowerCase()}-about.json`),
-    `${JSON.stringify(output, null, 2)}\n`,
-    "utf8",
-  );
 }
 
 main().catch((error) => {
