@@ -1,3 +1,10 @@
+## [1.9.9](https://github.com/Johannsis/Johannsis/compare/v1.9.8...v1.9.9) (2026-04-28)
+
+
+### Bug Fixes
+
+* Make header dashes responsive to width ([3f33e75](https://github.com/Johannsis/Johannsis/commit/3f33e7510d616c2267dfe7ffeae6a9e29de20bc9))
+
 ## [1.9.8](https://github.com/Johannsis/Johannsis/compare/v1.9.7...v1.9.8) (2026-04-28)
 
 
