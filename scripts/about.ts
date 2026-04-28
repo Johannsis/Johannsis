@@ -221,8 +221,15 @@ function buildDotGap(
   return ".".repeat(dots);
 }
 
-function buildHeaderBar(title: string, totalCharacters: number): string {
-  return "─".repeat(Math.max(4, totalCharacters - title.length));
+function buildDashGap(
+  label: string,
+  startX: number,
+  endX: number,
+  fontSize: number,
+): string {
+  const monospaceCharWidth = fontSize * 0.6;
+  const totalCharacters = Math.floor((endX - startX) / monospaceCharWidth);
+  return "─".repeat(Math.max(4, totalCharacters - label.length));
 }
 
 function buildAsciiTspans(
@@ -292,10 +299,11 @@ function createStatsSvg(
   const dividerX = 710;
   const rightColumnX = 740;
   const propertyValueX = 1520;
+  const cardRightX = 1572;
   const statsDetailX = 768;
   const propertyDotWidth = 44;
   const statsDotWidth = 44;
-  const headerBarWidth = 44;
+  const headerFontSize = 26;
   const githubStatsHeaderY = 734;
   const githubStatsStartY = 776;
   const githubStatsLineGap = 42;
@@ -369,16 +377,26 @@ function createStatsSvg(
     })
     .join("\n  ");
 
-  const profileHeaderBar = buildHeaderBar(`${USER_NAME}@github`, headerBarWidth);
-  const githubStatsBar = buildHeaderBar("GitHub Stats", headerBarWidth);
+  const profileHeaderBar = buildDashGap(
+    `${USER_NAME}@github`,
+    rightColumnX,
+    cardRightX,
+    headerFontSize,
+  );
+  const githubStatsBar = buildDashGap(
+    "— GitHub Stats",
+    rightColumnX,
+    cardRightX,
+    headerFontSize,
+  );
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1080" viewBox="0 0 1580 1080" role="img" aria-label="GitHub profile stats card">
   <rect x="8" y="8" width="1564" height="1064" rx="12" fill="${bg}" stroke="${border}" />
   <line x1="${dividerX}" y1="22" x2="${dividerX}" y2="1058" stroke="${border}" />
-  <text x="${rightColumnX}" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${profileHeaderBar}</tspan></text>
+  <text x="${rightColumnX}" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${headerFontSize}"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${profileHeaderBar}</tspan></text>
   ${propertyText}
-  <text x="${rightColumnX}" y="${githubStatsHeaderY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${githubStatsBar}</tspan></text>
+  <text x="${rightColumnX}" y="${githubStatsHeaderY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${headerFontSize}"><tspan fill="${text}">— GitHub Stats ${githubStatsBar}</tspan></text>
   ${githubStatsText}
   <text x="28" y="96" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="${text}">
       ${asciiTspans}
