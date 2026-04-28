@@ -1,6 +1,6 @@
 {
   "name": "johannsis",
-  "version": "1.9.7",
+  "version": "1.9.8",
   "private": false,
   "description": "A dynamic README.md for the GitHub Profile, using Actions.",
   "keywords": [
