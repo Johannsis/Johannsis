@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/Johannsis/Johannsis/compare/v1.7.3...v1.7.4) (2026-04-28)
+
+
+### Bug Fixes
+
+* Use GITHUB_TOKEN env and rename workflow ([5164234](https://github.com/Johannsis/Johannsis/commit/5164234013f04f8896746eed36e3a673a29b04dc))
+
 ## [1.7.3](https://github.com/Johannsis/Johannsis/compare/v1.7.2...v1.7.3) (2026-04-28)
 
 
