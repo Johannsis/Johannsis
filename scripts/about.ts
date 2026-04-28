@@ -5,11 +5,11 @@ import path from "node:path";
 // biome-ignore assist/source/useSortedKeys: Do not sort these, they are in a deliberate order for display purposes.
 const profileProperties: Record<string, string> = {
   Name: "Johannes Hoersch",
-  Age: `${new Date().getFullYear() - 1996} years`,
+  Age: `${new Date().getFullYear() - 1996}`,
   Languages: "English, Spanish, Italian",
-  Website: "https://johannsis.github.io/portfolio",
   IDE: "Zed, VSCode",
   OS: "Windows, Linux, macOS",
+  Hobbies: "Gaming, Extreme Sports",
 };
 
 // Keep the ascii-art.txt around 47 lines and 80 characters wide for best results.
@@ -221,6 +221,10 @@ function buildDotGap(
   return ".".repeat(dots);
 }
 
+function buildHeaderBar(title: string, totalCharacters: number): string {
+  return "─".repeat(Math.max(4, totalCharacters - title.length));
+}
+
 function buildAsciiTspans(
   asciiLines: string[],
   x: number,
@@ -281,7 +285,6 @@ function createStatsSvg(
   const green = "#3fb950";
   const red = "#f85149";
 
-  const topBar = "─".repeat(26);
   const propertyRows = Object.entries(profileProperties);
   const asciiBlockX = 28;
   const asciiBlockTopY = 60;
@@ -292,6 +295,7 @@ function createStatsSvg(
   const statsDetailX = 768;
   const propertyDotWidth = 44;
   const statsDotWidth = 44;
+  const headerBarWidth = 44;
   const githubStatsHeaderY = 734;
   const githubStatsStartY = 776;
   const githubStatsLineGap = 42;
@@ -334,7 +338,6 @@ function createStatsSvg(
       const y = githubStatsStartY + index * githubStatsLineGap;
       if (label === "Lines of Code:") {
         const breakdownY = y + githubStatsLineGap;
-        const breakdownText = `${data.locAdd.toLocaleString("en-US")}++, ${data.locDel.toLocaleString("en-US")}--`;
 
         return `${buildAlignedRow({
           dotWidth: statsDotWidth,
@@ -366,13 +369,16 @@ function createStatsSvg(
     })
     .join("\n  ");
 
+  const profileHeaderBar = buildHeaderBar(`${USER_NAME}@github`, headerBarWidth);
+  const githubStatsBar = buildHeaderBar("GitHub Stats", headerBarWidth);
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1080" viewBox="0 0 1580 1080" role="img" aria-label="GitHub profile stats card">
   <rect x="8" y="8" width="1564" height="1064" rx="12" fill="${bg}" stroke="${border}" />
   <line x1="${dividerX}" y1="22" x2="${dividerX}" y2="1058" stroke="${border}" />
-  <text x="${rightColumnX}" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${topBar}</tspan></text>
+  <text x="${rightColumnX}" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">${escapeXml(`${USER_NAME}@github`)}</tspan><tspan fill="${muted}"> ${profileHeaderBar}</tspan></text>
   ${propertyText}
-  <text x="${rightColumnX}" y="${githubStatsHeaderY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${topBar}</tspan></text>
+  <text x="${rightColumnX}" y="${githubStatsHeaderY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${text}">— GitHub Stats ${githubStatsBar}</tspan></text>
   ${githubStatsText}
   <text x="28" y="96" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="${text}">
       ${asciiTspans}
