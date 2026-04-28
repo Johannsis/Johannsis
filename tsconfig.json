@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "lib": ["ESNext"],
-    "types": ["node"],
-    "strict": true,
     "noEmit": true,
-    "skipLibCheck": true,
     "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": ["node"]
   },
   "include": ["scripts/**/*.ts"]
 }

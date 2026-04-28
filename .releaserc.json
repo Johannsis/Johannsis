@@ -10,48 +10,48 @@
             "release": "major"
           },
           {
-            "type": "feat",
-            "release": "minor"
+            "release": "minor",
+            "type": "feat"
           },
           {
-            "type": "fix",
-            "release": "patch"
+            "release": "patch",
+            "type": "fix"
           },
           {
-            "type": "perf",
-            "release": "patch"
+            "release": "patch",
+            "type": "perf"
           },
           {
-            "type": "docs",
-            "release": false
+            "release": false,
+            "type": "docs"
           },
           {
-            "type": "chore",
-            "release": false
+            "release": false,
+            "type": "chore"
           },
           {
-            "type": "style",
-            "release": false
+            "release": false,
+            "type": "style"
           },
           {
-            "type": "refactor",
-            "release": "patch"
+            "release": "patch",
+            "type": "refactor"
           },
           {
-            "type": "test",
-            "release": false
+            "release": false,
+            "type": "test"
           },
           {
-            "type": "ci",
-            "release": false
+            "release": false,
+            "type": "ci"
           },
           {
-            "type": "build",
-            "release": false
+            "release": false,
+            "type": "build"
           },
           {
-            "type": "revert",
-            "release": "patch"
+            "release": "patch",
+            "type": "revert"
           }
         ]
       }
