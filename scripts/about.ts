@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-function getRequiredEnv(name: "GH_TOKEN" | "USER_NAME"): string {
+function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
   const value = process.env[name];
   if (!value) {
     throw new Error(`Missing ${name} environment variable`);
@@ -9,13 +9,13 @@ function getRequiredEnv(name: "GH_TOKEN" | "USER_NAME"): string {
   return value;
 }
 
-const GH_TOKEN = getRequiredEnv("GH_TOKEN");
+const GITHUB_TOKEN = getRequiredEnv("GITHUB_TOKEN");
 const USER_NAME = getRequiredEnv("USER_NAME");
 
 const API_BASE = "https://api.github.com";
 const headers: Record<string, string> = {
   Accept: "application/vnd.github+json",
-  Authorization: `Bearer ${GH_TOKEN}`,
+  Authorization: `Bearer ${GITHUB_TOKEN}`,
   "User-Agent": `${USER_NAME}-about-script`,
   "X-GitHub-Api-Version": "2022-11-28",
 };

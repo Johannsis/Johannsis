@@ -1,4 +1,4 @@
-name: README build
+name: Update README about
 on:
   schedule:
     - cron: "0 7 * * *"
