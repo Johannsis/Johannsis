@@ -51,7 +51,6 @@ const profileProperties: ProfilePropertyGroup = {
   Languages: "English, Spanish, Italian",
   Contact: {
     Email: "johanneshoersch@gmail.com",
-    Mobile: "+1 (829) 791-7414",
   },
   System: {
     IDE: "Zed, VSCode",
@@ -266,7 +265,7 @@ function escapeXml(text: string): string {
 }
 
 const ROW_PREFIX = "· ";
-const ROW_GAP_PADDING = 2;
+const ROW_GAP_PADDING = 4;
 
 function buildDotGap(
   label: string,
