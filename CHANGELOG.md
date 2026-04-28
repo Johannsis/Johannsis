@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/Johannsis/Johannsis/compare/v1.10.1...v1.10.2) (2026-04-28)
+
+
+### Bug Fixes
+
+* Increase property limit and move Hobbies ([743f125](https://github.com/Johannsis/Johannsis/commit/743f125e4a24f6656a8cd3ce34c641542e508651))
+
 ## [1.10.1](https://github.com/Johannsis/Johannsis/compare/v1.10.0...v1.10.1) (2026-04-28)
 
 
