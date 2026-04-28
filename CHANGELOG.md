@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/Johannsis/Johannsis/compare/v1.10.0...v1.10.1) (2026-04-28)
+
+
+### Bug Fixes
+
+* Reorder profileProperties and writeStatsSvgs ([5dcceed](https://github.com/Johannsis/Johannsis/commit/5dcceed60a18cf1cad53078b30d8078ab6f4bff4))
+
 # [1.10.0](https://github.com/Johannsis/Johannsis/compare/v1.9.11...v1.10.0) (2026-04-28)
 
 
