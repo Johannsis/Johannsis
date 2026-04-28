@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Johannsis/Johannsis/compare/v1.7.5...v1.8.0) (2026-04-28)
+
+
+### Features
+
+* Refactor about script to embed ASCII in SVGs ([edb0467](https://github.com/Johannsis/Johannsis/commit/edb0467decfdc8cac328ab8d42a8be9c541ee974))
+
 ## [1.7.5](https://github.com/Johannsis/Johannsis/compare/v1.7.4...v1.7.5) (2026-04-28)
 
 
