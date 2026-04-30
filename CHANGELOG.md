@@ -1,3 +1,10 @@
+## [1.10.7](https://github.com/Johannsis/Johannsis/compare/v1.10.6...v1.10.7) (2026-04-30)
+
+
+### Bug Fixes
+
+* Reorder .prettierrc and fix bunfig newline and add zed ([16a6f2a](https://github.com/Johannsis/Johannsis/commit/16a6f2a1db9bb128f4f70a8441a4f617adfeb45e))
+
 ## [1.10.6](https://github.com/Johannsis/Johannsis/compare/v1.10.5...v1.10.6) (2026-04-28)
 
 
