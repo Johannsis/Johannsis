@@ -1,3 +1,10 @@
+## [1.10.6](https://github.com/Johannsis/Johannsis/compare/v1.10.5...v1.10.6) (2026-04-28)
+
+
+### Bug Fixes
+
+* Fix LinkedIn URL in README ([898a4de](https://github.com/Johannsis/Johannsis/commit/898a4de1daebafeef92fa49b9067b9e7791b2061))
+
 ## [1.10.5](https://github.com/Johannsis/Johannsis/compare/v1.10.4...v1.10.5) (2026-04-28)
 
 
