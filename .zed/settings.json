@@ -1,0 +1,35 @@
+{
+  "code_actions_on_format": {
+    "source.action.useSortedKeys.biome": true,
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
+  },
+  "format_on_save": "on",
+  "formatter": "language_server",
+  "language_servers": [
+    "vtsls",
+    "biome",
+    "package-version-server",
+    "json-language-server"
+  ],
+  "languages": {
+    "Markdown": {
+      "enable_language_server": false,
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+          "command": "./node_modules/.bin/prettier"
+        }
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "language_servers": ["biome", "vtsls"]
+    }
+  }
+}
