@@ -1,35 +1,127 @@
 {
-  "code_actions_on_format": {
-    "source.action.useSortedKeys.biome": true,
-    "source.fixAll.biome": true,
-    "source.organizeImports.biome": true
-  },
-  "format_on_save": "on",
-  "formatter": "language_server",
-  "language_servers": [
-    "vtsls",
-    "biome",
-    "package-version-server",
-    "json-language-server"
-  ],
-  "languages": {
-    "Markdown": {
-      "enable_language_server": false,
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "arguments": ["--stdin-filepath", "{buffer_path}"],
-          "command": "./node_modules/.bin/prettier"
+  "lsp": {
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "configPath": ".oxlintrc.json",
+          "run": "onType",
+          "disableNestedConfig": false,
+          "fixKind": "all"
         }
       }
     },
-    "TypeScript": {
-      "formatter": {
-        "language_server": {
-          "name": "biome"
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "fmt.configPath": ".oxfmtrc.json",
+          "run": "onSave"
         }
+      }
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.oxc": true
+  },
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": false,
+  "language_servers": [
+    "package-version-server",
+    "vtsls",
+    "json-language-server",
+    "oxfmt",
+    "oxlint"
+  ],
+  "languages": {
+    "HTML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
       },
-      "language_servers": ["biome", "vtsls"]
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+    "JSON": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+    "JSON5": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+    "JSONC": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+    "Markdown": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+    "TypeScript": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+    "YAML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
     }
   }
 }

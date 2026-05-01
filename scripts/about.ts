@@ -1,5 +1,5 @@
-import { readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
+import { readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
 
 // Setup your birthday
 const BIRTH_YEAR = 1996;
@@ -14,12 +14,12 @@ type ProfilePropertyGroup = {
 
 type ProfilePropertyRow =
   | {
-      kind: "item";
+      kind: 'item';
       label: string;
       value: string;
     }
   | {
-      kind: "section";
+      kind: 'section';
       label: string;
     };
 
@@ -38,47 +38,49 @@ function getAgeLabel(today: Date = new Date()): string {
   const isBirthday =
     today.getMonth() === BIRTH_MONTH_INDEX && today.getDate() === BIRTH_DAY;
 
-  const ageLabel = `${age}${isBirthday ? "🎂" : ""}`;
+  const ageLabel = `${age}${isBirthday ? '🎂' : ''}`;
 
   return ageLabel;
 }
 
 // Keep this to about 14 properties (including object properties names) or less so the SVG layout does not hide text or overflow.
-// biome-ignore assist/source/useSortedKeys: Do not sort these, they are in a deliberate order for display purposes.
 const profileProperties: ProfilePropertyGroup = {
-  Name: "Johannes Hoersch",
+  Name: 'Johannes Hoersch',
+  // oxlint-disable-next-line perfectionist/sort-objects
   Age: getAgeLabel(),
-  Languages: "English, Spanish, Italian",
+  Languages: 'English, Spanish, Italian',
+  // oxlint-disable-next-line perfectionist/sort-objects
   Contact: {
-    Email: "johanneshoersch@gmail.com",
+    Email: 'johanneshoersch@gmail.com',
   },
   System: {
-    IDE: "Zed, VSCode",
-    OS: "macOS, iOS",
+    IDE: 'Zed, VSCode',
+    OS: 'macOS, iOS',
   },
+  // oxlint-disable-next-line perfectionist/sort-objects
   Random: {
-    "Favorite Character": "Kirby",
-    Hobbies: "Gaming, Extreme Sports",
-    IGN: "Johannsis",
-    Pet: "Cat",
+    'Favorite Character': 'Kirby',
+    Hobbies: 'Gaming, Extreme Sports',
+    IGN: 'Johannsis',
+    Pet: 'Cat',
   },
 };
 
 // Keep the ascii-art.txt around 47 lines and 80 characters wide for best results.
 async function writeStatsSvgs(data: CardData): Promise<void> {
-  const asciiPath = path.join(process.cwd(), "assets", "ascii-art.txt");
-  const asciiRaw = await readFile(asciiPath, "utf8");
-  const asciiLines = asciiRaw.replace(/\r/g, "").split("\n");
+  const asciiPath = path.join(process.cwd(), 'assets', 'ascii-art.txt');
+  const asciiRaw = await readFile(asciiPath, 'utf8');
+  const asciiLines = asciiRaw.replace(/\r/g, '').split('\n');
 
-  const assetsDir = path.join(process.cwd(), "assets");
-  const darkSvg = createStatsSvg("dark", asciiLines, data);
-  const lightSvg = createStatsSvg("light", asciiLines, data);
+  const assetsDir = path.join(process.cwd(), 'assets');
+  const darkSvg = createStatsSvg('dark', asciiLines, data);
+  const lightSvg = createStatsSvg('light', asciiLines, data);
 
-  await writeFile(path.join(assetsDir, "dark_mode.svg"), darkSvg, "utf8");
-  await writeFile(path.join(assetsDir, "light_mode.svg"), lightSvg, "utf8");
+  await writeFile(path.join(assetsDir, 'dark_mode.svg'), darkSvg, 'utf8');
+  await writeFile(path.join(assetsDir, 'light_mode.svg'), lightSvg, 'utf8');
 }
 
-function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
+function getRequiredEnv(name: 'GITHUB_TOKEN' | 'USER_NAME'): string {
   const value = process.env[name];
   if (!value) {
     throw new Error(`Missing ${name} environment variable`);
@@ -86,15 +88,15 @@ function getRequiredEnv(name: "GITHUB_TOKEN" | "USER_NAME"): string {
   return value;
 }
 
-const GITHUB_TOKEN = getRequiredEnv("GITHUB_TOKEN");
-const USER_NAME = getRequiredEnv("USER_NAME");
+const GITHUB_TOKEN = getRequiredEnv('GITHUB_TOKEN');
+const USER_NAME = getRequiredEnv('USER_NAME');
 
-const API_BASE = "https://api.github.com";
+const API_BASE = 'https://api.github.com';
 const headers: Record<string, string> = {
-  Accept: "application/vnd.github+json",
+  Accept: 'application/vnd.github+json',
   Authorization: `Bearer ${GITHUB_TOKEN}`,
-  "User-Agent": `${USER_NAME}-about-script`,
-  "X-GitHub-Api-Version": "2022-11-28",
+  'User-Agent': `${USER_NAME}-about-script`,
+  'X-GitHub-Api-Version': '2022-11-28',
 };
 
 type Repo = {
@@ -135,10 +137,10 @@ function nextLink(linkHeader: string | null): string | null {
     return null;
   }
 
-  const parts = linkHeader.split(",").map((part) => part.trim());
+  const parts = linkHeader.split(',').map((part) => part.trim());
   for (const part of parts) {
     const match = part.match(/^<([^>]+)>;\s*rel="([^"]+)"$/);
-    if (match && match[2] === "next") {
+    if (match && match[2] === 'next') {
       return match[1];
     }
   }
@@ -159,7 +161,7 @@ async function githubGetAllPages<T>(initialUrl: string): Promise<T[]> {
 
     const page = (await res.json()) as T[];
     all.push(...page);
-    url = nextLink(res.headers.get("link"));
+    url = nextLink(res.headers.get('link'));
   }
 
   return all;
@@ -215,8 +217,8 @@ async function getRepoContributionStats(repo: Repo): Promise<{
   } catch (error) {
     if (
       error instanceof Error &&
-      (error.message.includes("(409)") ||
-        error.message.includes("Git Repository is empty"))
+      (error.message.includes('(409)') ||
+        error.message.includes('Git Repository is empty'))
     ) {
       return { add: 0, commits: 0, del: 0 };
     }
@@ -257,14 +259,14 @@ type CardData = {
 
 function escapeXml(text: string): string {
   return text
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&apos;");
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
 }
 
-const ROW_PREFIX = "· ";
+const ROW_PREFIX = '· ';
 const ROW_GAP_PADDING = 4;
 
 function buildDotGap(
@@ -280,7 +282,7 @@ function buildDotGap(
       value.length -
       ROW_GAP_PADDING,
   );
-  return ".".repeat(dots);
+  return '.'.repeat(dots);
 }
 
 function buildDashGap(
@@ -290,7 +292,7 @@ function buildDashGap(
   fontSize: number,
 ): string {
   const totalCharacters = getMonospaceCharacterCapacity(startX, endX, fontSize);
-  return "─".repeat(Math.max(4, totalCharacters - label.length));
+  return '─'.repeat(Math.max(4, totalCharacters - label.length));
 }
 
 function getMonospaceCharacterCapacity(
@@ -316,7 +318,7 @@ function buildAsciiTspans(
       (line, index) =>
         `<tspan x="${x}" y="${topY + index * lineHeight}">${escapeXml(line)}</tspan>`,
     )
-    .join("\n      ");
+    .join('\n      ');
 }
 
 function buildAlignedRow({
@@ -376,12 +378,12 @@ function buildProfilePropertyRows(
   const rows: ProfilePropertyRow[] = [];
 
   for (const [label, value] of Object.entries(properties)) {
-    if (typeof value === "string") {
-      rows.push({ kind: "item", label: `${label}:`, value });
+    if (typeof value === 'string') {
+      rows.push({ kind: 'item', label: `${label}:`, value });
       continue;
     }
 
-    rows.push({ kind: "section", label });
+    rows.push({ kind: 'section', label });
     rows.push(...buildProfilePropertyRows(value));
   }
 
@@ -389,19 +391,19 @@ function buildProfilePropertyRows(
 }
 
 function createStatsSvg(
-  theme: "dark" | "light",
+  theme: 'dark' | 'light',
   asciiLines: string[],
   data: CardData,
 ): string {
-  const isDark = theme === "dark";
-  const bg = isDark ? "#0d1117" : "#ffffff";
-  const border = isDark ? "#30363d" : "#d0d7de";
-  const text = isDark ? "#c9d1d9" : "#1f2328";
-  const muted = isDark ? "#8b949e" : "#57606a";
-  const accent = "#ffae57";
-  const value = "#79c0ff";
-  const green = "#3fb950";
-  const red = "#f85149";
+  const isDark = theme === 'dark';
+  const bg = isDark ? '#0d1117' : '#ffffff';
+  const border = isDark ? '#30363d' : '#d0d7de';
+  const text = isDark ? '#c9d1d9' : '#1f2328';
+  const muted = isDark ? '#8b949e' : '#57606a';
+  const accent = '#ffae57';
+  const value = '#79c0ff';
+  const green = '#3fb950';
+  const red = '#f85149';
 
   const propertyRows = buildProfilePropertyRows(profileProperties);
   const asciiBlockX = 28;
@@ -436,7 +438,7 @@ function createStatsSvg(
     .map((row, index) => {
       const y = propertyStartY + index * propertyLineGap;
 
-      if (row.kind === "section") {
+      if (row.kind === 'section') {
         return buildSectionHeader({
           endX: propertyValueX,
           fontSize: rowFontSize,
@@ -461,21 +463,21 @@ function createStatsSvg(
         y,
       });
     })
-    .join("\n  ");
+    .join('\n  ');
 
   const githubStatsRows: Array<[string, string]> = [
-    ["Repos:", data.repos.toLocaleString("en-US")],
-    ["Contributed:", data.contribRepos.toLocaleString("en-US")],
-    ["Stars:", data.stars.toLocaleString("en-US")],
-    ["Commits:", data.commits.toLocaleString("en-US")],
-    ["Followers:", data.followers.toLocaleString("en-US")],
-    ["Lines of Code:", data.locTotal.toLocaleString("en-US")],
+    ['Repos:', data.repos.toLocaleString('en-US')],
+    ['Contributed:', data.contribRepos.toLocaleString('en-US')],
+    ['Stars:', data.stars.toLocaleString('en-US')],
+    ['Commits:', data.commits.toLocaleString('en-US')],
+    ['Followers:', data.followers.toLocaleString('en-US')],
+    ['Lines of Code:', data.locTotal.toLocaleString('en-US')],
   ];
 
   const githubStatsText = githubStatsRows
     .map(([label, currentValue], index) => {
       const y = githubStatsStartY + index * githubStatsLineGap;
-      if (label === "Lines of Code:") {
+      if (label === 'Lines of Code:') {
         const breakdownY = y + githubStatsLineGap;
 
         return `${buildAlignedRow({
@@ -490,7 +492,7 @@ function createStatsSvg(
           valueX: propertyValueX,
           y,
         })}
-  <text x="${statsDetailX}" y="${breakdownY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">(</tspan><tspan fill="${green}">${escapeXml(`${data.locAdd.toLocaleString("en-US")}++`)}</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${escapeXml(`${data.locDel.toLocaleString("en-US")}--`)}</tspan><tspan fill="${muted}">)</tspan></text>`;
+  <text x="${statsDetailX}" y="${breakdownY}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26"><tspan fill="${muted}">(</tspan><tspan fill="${green}">${escapeXml(`${data.locAdd.toLocaleString('en-US')}++`)}</tspan><tspan fill="${muted}">, </tspan><tspan fill="${red}">${escapeXml(`${data.locDel.toLocaleString('en-US')}--`)}</tspan><tspan fill="${muted}">)</tspan></text>`;
       }
 
       return buildAlignedRow({
@@ -506,7 +508,7 @@ function createStatsSvg(
         y,
       });
     })
-    .join("\n  ");
+    .join('\n  ');
 
   const profileHeaderBar = buildDashGap(
     `${USER_NAME}@github`,
@@ -515,7 +517,7 @@ function createStatsSvg(
     headerFontSize,
   );
   const githubStatsBar = buildDashGap(
-    "— GitHub Stats",
+    '— GitHub Stats',
     rightColumnX,
     propertyValueX,
     headerFontSize,

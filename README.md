@@ -201,36 +201,46 @@
 
 <!--START_SECTION:activity-->
 
-1. 🚀 Published release [v1.10.7](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.7) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-2. 🚀 Published release [v1.10.6](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.6) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-3. 🚀 Published release [v1.10.5](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.5) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-4. 🚀 Published release [v1.10.4](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.4) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-5. 🚀 Published release [v1.10.3](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.3) in [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-   [v1.7.2](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.2) in
+1. 🚀 Published release
+   [v1.10.7](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.7) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+2. 🚀 Published release
+   [v1.10.6](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.6) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 3. 🚀 Published release
-   [v1.7.1](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.1) in
+   [v1.10.5](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.5) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 4. 🚀 Published release
-   [v1.7.0](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.0) in
+   [v1.10.4](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.4) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 5. 🚀 Published release
+   [v1.10.3](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.3) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+   [v1.7.2](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.2) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+6. 🚀 Published release
+   [v1.7.1](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.1) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+7. 🚀 Published release
+   [v1.7.0](https://github.com/Johannsis/Johannsis/releases/tag/v1.7.0) in
+   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+8. 🚀 Published release
    [v1.6.4](https://github.com/Johannsis/Johannsis/releases/tag/v1.6.4) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-6. 🚀 Published release
+9. 🚀 Published release
    [v1.5.13](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.13) in
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-7. 🚀 Published release
-   [v1.5.12](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.12) in
-   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-8. 🚀 Published release
-   [v1.5.11](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.11) in
-   [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
-   [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
-9. 🚀 Published release
-   [v1.0.1](https://github.com/Johannsis/portfolio/releases/tag/v1.0.1) in
-   [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+10. 🚀 Published release
+    [v1.5.12](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.12) in
+    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+11. 🚀 Published release
+    [v1.5.11](https://github.com/Johannsis/Johannsis/releases/tag/v1.5.11) in
+    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
+    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+12. 🚀 Published release
+    [v1.0.1](https://github.com/Johannsis/portfolio/releases/tag/v1.0.1) in
+    [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
 
 <!--END_SECTION:activity-->
 

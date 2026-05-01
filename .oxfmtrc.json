@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "proseWrap": "always",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "sortPackageJson": true,
+  "insertFinalNewline": false,
+  "ignorePatterns": ["CHANGELOG.md"]
+}

@@ -1,6 +1,6 @@
 {
   "name": "johannsis",
-  "version": "1.10.7",
+  "version": "1.10.6",
   "private": false,
   "description": "A dynamic README.md for the GitHub Profile, using Actions.",
   "keywords": [
@@ -22,12 +22,13 @@
   },
   "scripts": {
     "about": "bun run scripts/about.ts",
-    "check": "biome check .",
-    "check:fix": "biome check --write .",
+    "format": "oxfmt format .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.13",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
@@ -35,6 +36,9 @@
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.0",
     "@types/node": "^25.6.0",
+    "eslint-plugin-perfectionist": "^5.9.0",
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
     "prettier": "^3.8.3",
     "typescript": "^6.0.3"
   },

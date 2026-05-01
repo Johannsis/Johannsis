@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "jsPlugins": ["eslint-plugin-perfectionist"],
+  "categories": {
+    "correctness": "warn"
+  },
+  "ignorePatterns": ["CHANGELOG.md"],
+  "rules": {
+    "eslint/no-unused-vars": "error",
+    "perfectionist/sort-imports": "error",
+    "perfectionist/sort-exports": "error",
+    "perfectionist/sort-object-types": "error",
+    "perfectionist/sort-objects": "error",
+    "perfectionist/sort-interfaces": "error"
+  },
+  "overrides": [
+    {
+      "files": ["package.json", "bun.lock"],
+      "rules": {
+        "perfectionist/sort-objects": "off"
+      }
+    }
+  ]
+}
