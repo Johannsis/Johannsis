@@ -201,11 +201,11 @@
 
 <!--START_SECTION:activity-->
 
-1. ❌ Closed PR [#13](https://github.com/Johannsis/portfolio/pull/13) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
-2. 💪 Opened PR [#2017](https://github.com/krausest/js-framework-benchmark/pull/2017) in [krausest/js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
-3. 🚀 Published release [v1.1.2](https://github.com/Johannsis/portfolio-astro/releases/tag/v1.1.2) in [Johannsis/portfolio-astro](https://github.com/Johannsis/portfolio-astro)
-4. 🚀 Published release [v1.1.1](https://github.com/Johannsis/portfolio-astro/releases/tag/v1.1.1) in [Johannsis/portfolio-astro](https://github.com/Johannsis/portfolio-astro)
-5. 🚀 Published release [v1.1.0](https://github.com/Johannsis/portfolio-astro/releases/tag/v1.1.0) in [Johannsis/portfolio-astro](https://github.com/Johannsis/portfolio-astro)
+1. 🗣 Commented on [#2017](https://github.com/krausest/js-framework-benchmark/pull/2017#issuecomment-4535085872) in [krausest/js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
+2. ❌ Closed PR [#13](https://github.com/Johannsis/portfolio/pull/13) in [Johannsis/portfolio](https://github.com/Johannsis/portfolio)
+3. 💪 Opened PR [#2017](https://github.com/krausest/js-framework-benchmark/pull/2017) in [krausest/js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
+4. 🚀 Published release [v1.1.2](https://github.com/Johannsis/portfolio-astro/releases/tag/v1.1.2) in [Johannsis/portfolio-astro](https://github.com/Johannsis/portfolio-astro)
+5. 🚀 Published release [v1.1.1](https://github.com/Johannsis/portfolio-astro/releases/tag/v1.1.1) in [Johannsis/portfolio-astro](https://github.com/Johannsis/portfolio-astro)
    [Johannsis/Johannsis](https://github.com/Johannsis/Johannsis)
 3. 🚀 Published release
    [v1.10.5](https://github.com/Johannsis/Johannsis/releases/tag/v1.10.5) in
