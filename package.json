@@ -35,11 +35,11 @@
     "@semantic-release/github": "^12.0.10",
     "@semantic-release/npm": "^13.2.0",
     "@semantic-release/release-notes-generator": "^14.1.1",
-    "@types/node": "^26.6.2",
-    "eslint-plugin-perfectionist": "^5.12.0",
-    "oxfmt": "^0.70.0",
-    "oxlint": "^1.85.0",
-    "prettier": "^3.9.9",
+    "@types/node": "^26.6.5",
+    "eslint-plugin-perfectionist": "^5.12.1",
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
+    "prettier": "^3.9.10",
     "typescript": "^7.0.2"
   },
   "engines": {
